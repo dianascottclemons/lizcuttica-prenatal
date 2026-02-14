@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Paced Prenatal Series | Milly Grey Movement by Liz Cuttica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --warm-white: #FFFFFF;
+            --sand: #E8E0D4;
+            --taupe: #B8A99A;
+            --charcoal: #2C2C2C;
+            --soft-black: #1A1A1A;
+            --sage: #8B9A7E;
+            --sage-light: #A8B89E;
+            --dusty-rose: #C4A7A0;
+            --dusty-rose-light: #D4BBB5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* NAV */
+        nav {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--soft-black);
+        }
+
+        .logo span {
+            font-weight: 400;
+            color: var(--taupe);
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .nav-cta {
+            background: var(--sage);
+            color: white;
+            padding: 10px 24px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--sage-light);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 40px 80px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero-label {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            color: var(--soft-black);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--taupe);
+            max-width: 540px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .hero-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--charcoal);
+            margin-bottom: 32px;
+        }
+
+        .hero-price span {
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            color: var(--taupe);
+            font-weight: 300;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--sage);
+            color: white;
+            padding: 16px 48px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--sage-light);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--charcoal);
+            padding: 16px 48px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid var(--sand);
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--charcoal);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 40px;
+        }
+
+        .section-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-wide {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 16px;
+        }
+
+        section h2 {
+            font-size: clamp(30px, 4vw, 44px);
+            margin-bottom: 24px;
+            color: var(--soft-black);
+            font-weight: 400;
+        }
+
+        section p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* PROBLEM SECTION */
+        .problem {
+            background: var(--warm-white);
+        }
+
+        .problem-list {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .problem-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--sand);
+            font-size: 17px;
+            color: #555;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .problem-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 24px;
+            width: 8px;
+            height: 8px;
+            background: var(--dusty-rose);
+            border-radius: 50%;
+        }
+
+        /* WHAT'S INSIDE */
+        .whats-inside {
+            background: var(--cream);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .feature-card {
+            background: var(--warm-white);
+            padding: 40px 32px;
+            border: 1px solid var(--sand);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--soft-black);
+            font-weight: 500;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .feature-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: var(--sand);
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+
+        /* BREATHING CALLOUT */
+        .callout {
+            background: var(--sage);
+            color: white;
+            text-align: center;
+        }
+
+        .callout h2 {
+            color: white;
+            font-style: italic;
+        }
+
+        .callout p {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 17px;
+        }
+
+        /* MODULES */
+        .modules {
+            background: var(--warm-white);
+        }
+
+        .module-list {
+            margin-top: 48px;
+        }
+
+        .module-item {
+            display: flex;
+            gap: 32px;
+            padding: 32px 0;
+            border-bottom: 1px solid var(--sand);
+            align-items: flex-start;
+        }
+
+        .module-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            color: var(--sand);
+            line-height: 1;
+            min-width: 60px;
+        }
+
+        .module-content h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--soft-black);
+        }
+
+        .module-content p {
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* ABOUT */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            background: var(--sand);
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--taupe);
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+        }
+
+        .about-stat {
+            display: inline-block;
+            margin-right: 32px;
+            margin-top: 24px;
+        }
+
+        .about-stat strong {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: var(--sage);
+            font-weight: 500;
+        }
+
+        .about-stat span {
+            font-size: 13px;
+            color: var(--taupe);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: var(--warm-white);
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+            text-align: left;
+        }
+
+        .testimonial-card {
+            padding: 32px;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+        }
+
+        .testimonial-card blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-style: italic;
+            color: var(--charcoal);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card cite {
+            font-style: normal;
+            font-size: 13px;
+            color: var(--taupe);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--cream);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--sand);
+            padding: 24px 0;
+        }
+
+        .faq-item h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--soft-black);
+            cursor: pointer;
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: var(--soft-black);
+            color: white;
+            text-align: center;
+            padding: 120px 40px;
+        }
+
+        .final-cta h2 {
+            color: white;
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .final-cta .btn-primary {
+            background: var(--sage);
+        }
+
+        .final-cta .btn-primary:hover {
+            background: var(--sage-light);
+        }
+
+        .price-badge {
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+
+        .price-badge .amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: white;
+        }
+
+        .price-badge .detail {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--taupe);
+            background: var(--cream);
+            border-top: 1px solid var(--sand);
+        }
+
+        footer a {
+            color: var(--taupe);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--charcoal);
+        }
+
+        /* LEAD MAGNET BANNER */
+        .lead-magnet {
+            background: var(--dusty-rose);
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .lead-magnet h2 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .lead-magnet p {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 24px;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .email-form input[type="email"] {
+            padding: 14px 20px;
+            font-size: 15px;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            flex: 1;
+            min-width: 240px;
+        }
+
+        .email-form button {
+            padding: 14px 28px;
+            background: var(--soft-black);
+            color: white;
+            border: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .email-form button:hover {
+            background: var(--charcoal);
+        }
+
+        /* FOR WHO */
+        .for-who {
+            background: var(--cream);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 32px;
+        }
+
+        .col h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: var(--sage);
+        }
+
+        .col.not h3 {
+            color: var(--dusty-rose);
+        }
+
+        .col ul {
+            list-style: none;
+        }
+
+        .col ul li {
+            padding: 8px 0;
+            font-size: 15px;
+            color: #555;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .col ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+
+        .col.yes ul li::before {
+            background: var(--sage);
+        }
+
+        .col.not ul li::before {
+            background: var(--dusty-rose);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            section {
+                padding: 60px 24px;
+            }
+
+            .about-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                aspect-ratio: 16/9;
+            }
+
+            .module-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .module-number {
+                font-size: 36px;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero {
+                padding: 100px 24px 60px;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-form input[type="email"] {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="logo">
+            Milly Grey Movement
+            <span>by Liz Cuttica</span>
+        </div>
+        <a href="#start" class="nav-cta">Start the Program</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Self-Paced Prenatal Series</div>
+            <h1>Move Through Your Pregnancy With Confidence</h1>
+            <p>A self-paced program for expectant moms who want to keep moving safely, built by a trainer who's helped 500+ pregnant women.</p>
+            <div class="hero-price">$149 <span>/ lifetime access</span></div>
+            <a href="#start" class="btn-primary">Start the Program</a>
+        </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="problem">
+        <div class="section-inner">
+            <div class="section-label">The Problem</div>
+            <h2>Nobody's Telling You How to Move</h2>
+            <p>Your doctor says exercise is fine. Your gym instructor says "just modify." YouTube has a thousand different answers. None of them feel right for your body, your trimester, your situation.</p>
+            <ul class="problem-list">
+                <li>Generic modifications that don't account for how your body is actually changing</li>
+                <li>"Listen to your body" — but nobody explains what that means week to week</li>
+                <li>Conflicting advice about what's safe and what isn't</li>
+                <li>No progression — the same advice whether you're 8 weeks or 38 weeks</li>
+                <li>Workouts designed to "maintain fitness" instead of preparing you for labor and recovery</li>
+            </ul>
+            <p>You don't need more generic advice. You need a plan that grows with you.</p>
+        </div>
+    </section>
+
+    <!-- BREATHING CALLOUT -->
+    <section class="callout">
+        <div class="section-inner">
+            <h2>"Learning to breathe is the most important thing you can do."</h2>
+            <br>
+            <p>Proper breathing activates your deep core, manages pressure on your pelvic floor, and gives your baby more room to grow. Every module in this program starts with breath. Not because it's trendy. Because it's the foundation everything else is built on.</p>
+        </div>
+    </section>
+
+    <!-- WHAT'S INSIDE -->
+    <section class="whats-inside">
+        <div class="section-wide">
+            <div class="section-label">What's Inside</div>
+            <h2>Everything You Need, Nothing You Don't</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">6</div>
+                    <h3>Progressive Modules</h3>
+                    <p>From first trimester foundations through labor prep. Each module adapts as your body changes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">20</div>
+                    <h3>Minute Workouts</h3>
+                    <p>Guided video sessions you can do at home with minimal equipment. Designed for real life, not the gym.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">&infin;</div>
+                    <h3>Lifetime Access</h3>
+                    <p>Use it for this pregnancy and the next one. Come back to any module, any time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">5</div>
+                    <h3>Expert Talks</h3>
+                    <p>Pelvic floor health, nutrition, mental health, and birth preparation from specialists Liz trusts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">1</div>
+                    <h3>Foundation: Breath</h3>
+                    <p>Breathwork and pelvic floor training woven into every session — not as an afterthought, but as the starting point.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">0</div>
+                    <h3>Guesswork</h3>
+                    <p>Every workout tells you exactly what to do, when to modify, and why. No vague advice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD MAGNET -->
+    <section class="lead-magnet">
+        <div class="section-inner">
+            <h2>Not Ready Yet? Start Here.</h2>
+            <p>Download 5 prenatal exercises you can do in any trimester. Free, no commitment.</p>
+            <div class="email-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">Send Me the Guide</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULES -->
+    <section class="modules">
+        <div class="section-inner">
+            <div class="section-label">The Curriculum</div>
+            <h2>Six Modules. One Complete System.</h2>
+            <div class="module-list">
+                <div class="module-item">
+                    <div class="module-number">01</div>
+                    <div class="module-content">
+                        <h3>Foundations: Breath, Alignment, Awareness</h3>
+                        <p>How your body is changing and why breath is the starting point for everything. Diaphragmatic breathing, posture during pregnancy, and the equipment you'll need.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">02</div>
+                    <div class="module-content">
+                        <h3>First Trimester: Building the Base</h3>
+                        <p>Core activation, posture, and mobility work for when your body is adjusting but not yet visibly changed. Pelvic floor basics with a guest expert.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">03</div>
+                    <div class="module-content">
+                        <h3>Second Trimester: Strength and Stability</h3>
+                        <p>Progressive strength work adapted for your growing belly. Barre-inspired movement with a focus on glutes, hips, and core connection.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">04</div>
+                    <div class="module-content">
+                        <h3>Third Trimester: Power and Preparation</h3>
+                        <p>Functional strength for labor. Positions, breathing patterns, and movements that prepare your body for delivery.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">05</div>
+                    <div class="module-content">
+                        <h3>Labor Prep: Breath, Positions, Readiness</h3>
+                        <p>What to practice in the final weeks. Breathing techniques for labor. Positions that help. What to expect physically.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">06</div>
+                    <div class="module-content">
+                        <h3>Early Postpartum Preview</h3>
+                        <p>A gentle introduction to recovery. What the first 6 weeks look like. When to start moving again and how.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOR WHO -->
+    <section class="for-who">
+        <div class="section-inner">
+            <h2>Is This for You?</h2>
+            <div class="two-col">
+                <div class="col yes">
+                    <h3>This Is for You If</h3>
+                    <ul>
+                        <li>You're pregnant and want to keep exercising safely</li>
+                        <li>"Listen to your body" hasn't been helpful advice</li>
+                        <li>You want to prepare for labor and recovery, not just stay in shape</li>
+                        <li>20 minutes is what you've got</li>
+                        <li>You want guidance from someone who's been through it</li>
+                    </ul>
+                </div>
+                <div class="col not">
+                    <h3>This Isn't for You If</h3>
+                    <ul>
+                        <li>You want high-intensity workouts to maintain peak fitness</li>
+                        <li>You want live, real-time coaching (the Live Prenatal Series is better for that)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="section-wide">
+            <div class="about-layout">
+                <div class="about-image">
+                    [Liz's photo here]
+                </div>
+                <div class="about-text">
+                    <div class="section-label">Meet Your Trainer</div>
+                    <h2>Liz Cuttica</h2>
+                    <p>Liz spent a decade teaching fitness before she got pregnant. She thought she had it figured out. Then came a 36-hour labor, a C-section she didn't plan for, and a postpartum recovery nobody warned her about.</p>
+                    <p>That experience changed everything. She became a certified Pregnancy &amp; Postpartum Corrective Exercise Specialist and founded Milly Grey Movement to help women move through pregnancy with confidence &mdash; the kind of confidence she wished she'd had.</p>
+                    <p>Her philosophy: something is always better than nothing. Better is better than more. And learning how to breathe is the single most important thing you can do.</p>
+                    <div>
+                        <div class="about-stat">
+                            <strong>500+</strong>
+                            <span>Women helped</span>
+                        </div>
+                        <div class="about-stat">
+                            <strong>15+</strong>
+                            <span>Years experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="section-wide">
+            <div class="section-label">What Graduates Say</div>
+            <h2>From Women Who've Been Through It</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <blockquote>"I wish I'd had this for my first pregnancy. The breathing techniques alone changed how I moved through my third trimester."</blockquote>
+                    <cite>&mdash; Prenatal Series Graduate</cite>
+                </div>
+                <div class="testimonial-card">
+                    <blockquote>"Liz doesn't give you generic advice. She teaches you why your body is doing what it's doing, and what to do about it. I felt so much more prepared for labor."</blockquote>
+                    <cite>&mdash; Prenatal Series Graduate</cite>
+                </div>
+                <div class="testimonial-card">
+                    <blockquote>"Something is always better than nothing. That mantra got me through the days when I was exhausted and didn't want to move. 10 minutes made all the difference."</blockquote>
+                    <cite>&mdash; Prenatal Series Graduate</cite>
+                </div>
+            </div>
+            <p style="margin-top: 24px; font-size: 13px; color: var(--taupe); font-style: italic;">Real testimonials from Liz's graduates will replace these placeholders.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="section-inner">
+            <div class="section-label">Common Questions</div>
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h3>I'm in my second or third trimester. Is it too late?</h3>
+                <p>No. Every module meets you where you are. You can start at any point in your pregnancy and get value immediately. Many women start in their third trimester.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need equipment?</h3>
+                <p>Minimal. A yoga mat, a foam roller, and light resistance bands. Liz tells you exactly what you need in Module 1.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is this different from the Live Prenatal Series?</h3>
+                <p>The Live Series ($599) includes live Zoom sessions with Liz, real-time feedback, expert guest talks, and a private community. The Self-Paced Series ($149) gives you the core workout program and breathwork training on your own schedule, with lifetime access. Many graduates do both.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I have a high-risk pregnancy?</h3>
+                <p>Always consult your healthcare provider before starting any exercise program during pregnancy. This program is designed for low-risk pregnancies.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I use this for a future pregnancy?</h3>
+                <p>Yes. Lifetime access means you keep it forever. Many women come back for their second and third pregnancies.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if it's not for me?</h3>
+                <p>14-day money-back guarantee. No questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="start">
+        <div class="section-inner">
+            <h2>Stop Guessing. Start Moving.</h2>
+            <div class="price-badge">
+                <div class="amount">$149</div>
+                <div class="detail">Lifetime Access &middot; 6 Modules &middot; Start Today</div>
+            </div>
+            <br><br>
+            <a href="#" class="btn-primary">Start the Program</a>
+            <br><br><br>
+            <p>Questions? <a href="mailto:liz@lizcuttica.com" style="color: rgba(255,255,255,0.8); text-decoration: underline;">liz@lizcuttica.com</a></p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Milly Grey Movement by Liz Cuttica &middot; <a href="https://www.lizcuttica.com">lizcuttica.com</a> &middot; <a href="https://www.instagram.com/lizcuttica/">@lizcuttica</a></p>
+    </footer>
+
+</body>
+</html>
