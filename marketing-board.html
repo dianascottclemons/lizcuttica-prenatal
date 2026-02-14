@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Strategy — Liz Cuttica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --sage: #8B9A7E;
+            --charcoal: #2C2C2C;
+            --sand: #E8E0D4;
+            --taupe: #B8A99A;
+            --dusty-rose: #C4A7A0;
+            --sage-light: rgba(139, 154, 126, 0.12);
+            --rose-light: rgba(196, 167, 160, 0.12);
+            --sand-light: rgba(232, 224, 212, 0.25);
+            --charcoal-light: rgba(44, 44, 44, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Header ── */
+        .hero {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #3a3a3a 50%, var(--charcoal) 100%);
+            color: var(--cream);
+            padding: 80px 60px 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(139,154,126,0.15) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 50%, rgba(196,167,160,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sage);
+            border: 1px solid rgba(139,154,126,0.4);
+            padding: 8px 24px;
+            border-radius: 30px;
+            margin-bottom: 32px;
+        }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            line-height: 1.15;
+        }
+        .hero h1 span {
+            color: var(--sage);
+        }
+        .hero p {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--taupe);
+            letter-spacing: 0.5px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* ── Layout ── */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ── Section Headers ── */
+        .section {
+            padding: 80px 0;
+        }
+        .section + .section {
+            border-top: 1px solid var(--sand);
+        }
+        .section-header {
+            margin-bottom: 48px;
+        }
+        .section-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sage);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: var(--charcoal);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--taupe);
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        /* ── Content Themes Dashboard ── */
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+        .theme-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .theme-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .theme-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+        .theme-card.educational::before { background: var(--sage); }
+        .theme-card.personal::before { background: var(--dusty-rose); }
+        .theme-card.testimonial::before { background: var(--taupe); }
+        .theme-card.promo::before { background: var(--charcoal); }
+
+        .theme-percentage {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+        .theme-card.educational .theme-percentage { color: var(--sage); }
+        .theme-card.personal .theme-percentage { color: var(--dusty-rose); }
+        .theme-card.testimonial .theme-percentage { color: var(--taupe); }
+        .theme-card.promo .theme-percentage { color: var(--charcoal); }
+
+        .theme-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            color: var(--charcoal);
+        }
+        .theme-description {
+            font-size: 13px;
+            color: var(--taupe);
+            line-height: 1.5;
+        }
+
+        .theme-bar-container {
+            display: flex;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .theme-bar-segment {
+            transition: width 0.6s ease;
+        }
+
+        /* ── Calendar Grid ── */
+        .week-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            margin-top: 40px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--sand);
+        }
+        .week-label:first-of-type {
+            margin-top: 0;
+        }
+
+        .calendar-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: default;
+        }
+        .post-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+
+        .post-image {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        .post-card.educational .post-image { background: linear-gradient(135deg, var(--sage), #9aab8e); }
+        .post-card.personal .post-image { background: linear-gradient(135deg, var(--dusty-rose), #d4b8b1); }
+        .post-card.testimonial .post-image { background: linear-gradient(135deg, var(--taupe), #c9bbb0); }
+        .post-card.promo .post-image { background: linear-gradient(135deg, var(--charcoal), #444); }
+
+        .post-image-decoration {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .post-image .post-type-icon {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .post-image h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .post-meta {
+            padding: 20px;
+        }
+        .post-meta-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .post-day {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+        .post-type-badge {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .post-card.educational .post-type-badge { background: var(--sage-light); color: var(--sage); }
+        .post-card.personal .post-type-badge { background: var(--rose-light); color: var(--dusty-rose); }
+        .post-card.testimonial .post-type-badge { background: var(--sand-light); color: var(--taupe); }
+        .post-card.promo .post-type-badge { background: var(--charcoal-light); color: var(--charcoal); }
+
+        .post-caption {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ── Instagram Mockups ── */
+        .mockups-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            align-items: start;
+        }
+
+        .phone-frame {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        .phone-status-bar {
+            background: white;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .phone-status-icons {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .ig-header {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .ig-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            border: 2px solid var(--sage);
+        }
+        .ig-username {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        .ig-verified {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+        .ig-dots {
+            margin-left: auto;
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: var(--charcoal);
+        }
+
+        .ig-image {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            position: relative;
+        }
+        .ig-image h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+        .ig-image .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.85);
+            text-align: center;
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+            font-weight: 400;
+        }
+
+        .ig-actions {
+            padding: 12px 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .ig-action-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+        .ig-bookmark {
+            margin-left: auto;
+        }
+
+        .ig-likes {
+            padding: 4px 14px 0;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .ig-caption {
+            padding: 6px 14px 14px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .ig-caption-username {
+            font-weight: 600;
+        }
+        .ig-caption-more {
+            color: #999;
+            cursor: pointer;
+        }
+        .ig-engagement {
+            padding: 0 14px 6px;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .ig-comments {
+            padding: 0 14px 16px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .mockup-label {
+            text-align: center;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .mockup-label-type {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .mockup-label-note {
+            font-size: 12px;
+            color: var(--taupe);
+        }
+
+        /* ── Funnel ── */
+        .funnel-container {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .funnel-stages {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: nowrap;
+        }
+
+        .funnel-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            max-width: 160px;
+            position: relative;
+        }
+
+        .funnel-icon-wrap {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+        .funnel-icon-wrap svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .funnel-stage-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .funnel-stage-detail {
+            font-size: 12px;
+            color: var(--taupe);
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+        .funnel-metric {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+        .funnel-metric-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        .funnel-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 24px;
+            flex: 0 0 40px;
+            color: var(--sand);
+        }
+        .funnel-arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .funnel-conversion {
+            position: absolute;
+            top: -8px;
+            right: -28px;
+            z-index: 3;
+        }
+        .funnel-conversion-badge {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 20px;
+            padding: 3px 10px;
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--sage);
+            white-space: nowrap;
+        }
+
+        .funnel-summary {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--sand);
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+        .funnel-summary-item {
+            text-align: center;
+        }
+        .funnel-summary-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--sage);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .funnel-summary-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 60px 40px;
+            border-top: 1px solid var(--sand);
+        }
+        .footer-text {
+            font-size: 13px;
+            color: var(--taupe);
+            letter-spacing: 0.5px;
+        }
+        .footer-text strong {
+            color: var(--charcoal);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .hero { padding: 60px 30px 50px; }
+            .hero h1 { font-size: 38px; }
+            .container { padding: 0 24px; }
+            .themes-grid { grid-template-columns: repeat(2, 1fr); }
+            .calendar-row { grid-template-columns: 1fr; gap: 16px; }
+            .mockups-grid { grid-template-columns: 1fr; gap: 40px; }
+            .funnel-stages { flex-wrap: wrap; gap: 12px; }
+            .funnel-arrow { display: none; }
+            .funnel-summary { flex-direction: column; gap: 24px; }
+            .section-title { font-size: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ════════════════════════════════════════════════════════ -->
+<header class="hero">
+    <div class="hero-badge">Strategy Presentation</div>
+    <h1>Marketing Strategy &mdash; <span>Liz Cuttica</span></h1>
+    <p>Content Calendar, Instagram Strategy &amp; Funnel Design</p>
+</header>
+
+<main>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: CONTENT THEMES -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">Section 01</div>
+            <h2 class="section-title">Content Themes</h2>
+            <p class="section-subtitle">Four content pillars form the backbone of every post. The mix is designed to build trust first, sell second.</p>
+        </div>
+
+        <div class="themes-grid">
+            <div class="theme-card educational">
+                <div class="theme-percentage">40%</div>
+                <div class="theme-label">Educational</div>
+                <div class="theme-description">Expert tips, exercises, myth-busting. Builds authority and drives saves/shares.</div>
+            </div>
+            <div class="theme-card personal">
+                <div class="theme-percentage">20%</div>
+                <div class="theme-label">Personal Story</div>
+                <div class="theme-description">Liz's raw, honest pregnancy and birth experiences. Builds emotional connection.</div>
+            </div>
+            <div class="theme-card testimonial">
+                <div class="theme-percentage">20%</div>
+                <div class="theme-label">Testimonials</div>
+                <div class="theme-description">Real client results and transformation stories. Social proof that converts.</div>
+            </div>
+            <div class="theme-card promo">
+                <div class="theme-percentage">20%</div>
+                <div class="theme-label">Promotional</div>
+                <div class="theme-description">Free guide CTAs, course promos, direct offers. Only after trust is established.</div>
+            </div>
+        </div>
+
+        <div class="theme-bar-container">
+            <div class="theme-bar-segment" style="width: 40%; background: var(--sage);"></div>
+            <div class="theme-bar-segment" style="width: 20%; background: var(--dusty-rose);"></div>
+            <div class="theme-bar-segment" style="width: 20%; background: var(--taupe);"></div>
+            <div class="theme-bar-segment" style="width: 20%; background: var(--charcoal);"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: CONTENT CALENDAR -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">Section 02</div>
+            <h2 class="section-title">Instagram Content Calendar</h2>
+            <p class="section-subtitle">Month 1: 12 posts across 4 weeks. Three posts per week (Mon / Wed / Fri). Color-coded by content pillar.</p>
+        </div>
+
+        <!-- Week 1 -->
+        <div class="week-label">Week 1</div>
+        <div class="calendar-row">
+            <div class="post-card educational">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                    </div>
+                    <h3>The #1 exercise I give every pregnant client</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Monday</span>
+                        <span class="post-type-badge">Educational</span>
+                    </div>
+                    <p class="post-caption">Diaphragmatic breathing explainer with step-by-step instructions. Carousel format: 5 slides breaking down the technique.</p>
+                </div>
+            </div>
+
+            <div class="post-card personal">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                    </div>
+                    <h3>I was fit. I still wasn't prepared.</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Wednesday</span>
+                        <span class="post-type-badge">Personal Story</span>
+                    </div>
+                    <p class="post-caption">Liz's pregnancy story, raw and honest. What being "fit" didn't prepare her for. Photo + long-form caption.</p>
+                </div>
+            </div>
+
+            <div class="post-card promo">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                    </div>
+                    <h3>Free guide: 5 Prenatal Exercises for Every Trimester</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Friday</span>
+                        <span class="post-type-badge">Promo / CTA</span>
+                    </div>
+                    <p class="post-caption">Lead magnet promo with download link. Designed graphic with exercise previews. "Link in bio" CTA.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 2 -->
+        <div class="week-label">Week 2</div>
+        <div class="calendar-row">
+            <div class="post-card educational">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                    </div>
+                    <h3>Why your back hurts in pregnancy (and how to fix it)</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Monday</span>
+                        <span class="post-type-badge">Educational</span>
+                    </div>
+                    <p class="post-caption">Cat-cow demo + posture tips for each trimester. Reel format: 30-second exercise demo with voiceover.</p>
+                </div>
+            </div>
+
+            <div class="post-card testimonial">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
+                    </div>
+                    <h3>"I wish I'd had this for my first pregnancy"</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Wednesday</span>
+                        <span class="post-type-badge">Testimonial</span>
+                    </div>
+                    <p class="post-caption">Client result story. Before/after photos (with permission) + quote overlay. Social proof that converts.</p>
+                </div>
+            </div>
+
+            <div class="post-card educational">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                    </div>
+                    <h3>3rd trimester? You can still train. Here's how.</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Friday</span>
+                        <span class="post-type-badge">Educational</span>
+                    </div>
+                    <p class="post-caption">Modified exercises for late pregnancy. Carousel of 6 safe, effective movements with modifications shown side by side.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 3 -->
+        <div class="week-label">Week 3</div>
+        <div class="calendar-row">
+            <div class="post-card personal">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                    </div>
+                    <h3>36 hours of labor. Then a C-section I didn't plan for.</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Monday</span>
+                        <span class="post-type-badge">Personal Story</span>
+                    </div>
+                    <p class="post-caption">Liz's birth story and what she learned. Vulnerable, real, deeply relatable. Photo + long-form caption.</p>
+                </div>
+            </div>
+
+            <div class="post-card educational">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                    </div>
+                    <h3>Glute bridges: the most underrated pregnancy exercise</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Wednesday</span>
+                        <span class="post-type-badge">Educational</span>
+                    </div>
+                    <p class="post-caption">Form tips + why glutes matter for pregnancy support. Reel: demo with real-time coaching cues.</p>
+                </div>
+            </div>
+
+            <div class="post-card promo">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+                    </div>
+                    <h3>The Self-Paced Prenatal Series &mdash; $149, lifetime access</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Friday</span>
+                        <span class="post-type-badge">Promo / CTA</span>
+                    </div>
+                    <p class="post-caption">Course promo with feature highlights. Designed graphic: what's included, price, testimonial snippet. "Link in bio."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 4 -->
+        <div class="week-label">Week 4</div>
+        <div class="calendar-row">
+            <div class="post-card educational">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                    </div>
+                    <h3>Pelvic floor 101: what they don't tell you in prenatal class</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Monday</span>
+                        <span class="post-type-badge">Educational</span>
+                    </div>
+                    <p class="post-caption">Myth-busting, practical tips. Carousel: "What they say vs. what's actually true" format. High save potential.</p>
+                </div>
+            </div>
+
+            <div class="post-card testimonial">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
+                    </div>
+                    <h3>"The difference between my first and second pregnancy"</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Wednesday</span>
+                        <span class="post-type-badge">Testimonial</span>
+                    </div>
+                    <p class="post-caption">Before/after story from a client. Side-by-side comparison: same person, two pregnancies, wildly different experience.</p>
+                </div>
+            </div>
+
+            <div class="post-card promo">
+                <div class="post-image">
+                    <div class="post-image-decoration"></div>
+                    <div class="post-type-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="16" height="16"><path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                    </div>
+                    <h3>"Something is always better than nothing"</h3>
+                </div>
+                <div class="post-meta">
+                    <div class="post-meta-top">
+                        <span class="post-day">Friday</span>
+                        <span class="post-type-badge">Promo / CTA</span>
+                    </div>
+                    <p class="post-caption">Liz's mantra + free guide CTA. Quote graphic with branded design. Soft sell: "Start with this free guide."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: INSTAGRAM MOCKUPS -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">Section 03</div>
+            <h2 class="section-title">Instagram Post Mockups</h2>
+            <p class="section-subtitle">Three high-impact posts shown at full fidelity. These represent the strongest hooks in the calendar.</p>
+        </div>
+
+        <div class="mockups-grid">
+
+            <!-- Mockup 1: Educational (Post #1) -->
+            <div>
+                <div class="phone-frame">
+                    <div class="phone-status-bar">
+                        <span>9:41</span>
+                        <div class="phone-status-icons">
+                            <svg width="16" height="12" viewBox="0 0 16 12"><rect x="0" y="4" width="3" height="8" rx="0.5" fill="#2C2C2C"/><rect x="4.5" y="2.5" width="3" height="9.5" rx="0.5" fill="#2C2C2C"/><rect x="9" y="1" width="3" height="11" rx="0.5" fill="#2C2C2C"/><rect x="13.5" y="0" width="2.5" height="12" rx="0.5" fill="#2C2C2C"/></svg>
+                            <svg width="24" height="12" viewBox="0 0 24 12"><rect x="0" y="1" width="21" height="10" rx="2" stroke="#2C2C2C" fill="none" stroke-width="1"/><rect x="1.5" y="2.5" width="15" height="7" rx="1" fill="#2C2C2C"/><rect x="22" y="4" width="2" height="4" rx="0.5" fill="#2C2C2C"/></svg>
+                        </div>
+                    </div>
+                    <div class="ig-header">
+                        <img class="ig-avatar" src="https://images.squarespace-cdn.com/content/v1/6637ac8720301709efa8314d/c57cec66-67cf-420b-95fb-1c1553e93d1b/DSC03102.jpg" alt="Liz Cuttica" onerror="this.style.background='var(--sage)'; this.style.display='block';">
+                        <span class="ig-username">lizcuttica</span>
+                        <span class="ig-dots">...</span>
+                    </div>
+                    <div class="ig-image" style="background: linear-gradient(135deg, var(--sage), #9aab8e);">
+                        <div class="post-image-decoration"></div>
+                        <div style="position: relative; z-index: 1; text-align: center;">
+                            <h3 style="font-size: 22px; margin-bottom: 8px;">The #1 exercise I give every pregnant client</h3>
+                            <div class="subtitle">Swipe for the step-by-step &rarr;</div>
+                        </div>
+                    </div>
+                    <div class="ig-actions">
+                        <svg class="ig-action-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                        <svg class="ig-action-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"/></svg>
+                        <svg class="ig-action-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+                        <svg class="ig-action-icon ig-bookmark" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"/></svg>
+                    </div>
+                    <div class="ig-likes">2,847 likes</div>
+                    <div class="ig-caption">
+                        <span class="ig-caption-username">lizcuttica</span> If I could only give you ONE exercise for your entire pregnancy, this would be it. Not squats. Not kegels. Diaphragmatic breathing. <span class="ig-caption-more">...more</span>
+                    </div>
+                    <div class="ig-comments">View all 94 comments</div>
+                    <div class="ig-engagement" style="padding-bottom: 16px;">2 hours ago</div>
+                </div>
+                <div class="mockup-label">
+                    <div class="mockup-label-type" style="color: var(--sage);">Educational / Carousel</div>
+                    <div class="mockup-label-note">Projected: 2,500-3,500 reach &middot; High save rate</div>
+                </div>
+            </div>
+
+            <!-- Mockup 2: Personal Story (Post #2) -->
+            <div>
+                <div class="phone-frame">
+                    <div class="phone-status-bar">
+                        <span>9:41</span>
+                        <div class="phone-status-icons">
+                            <svg width="16" height="12" viewBox="0 0 16 12"><rect x="0" y="4" width="3" height="8" rx="0.5" fill="#2C2C2C"/><rect x="4.5" y="2.5" width="3" height="9.5" rx="0.5" fill="#2C2C2C"/><rect x="9" y="1" width="3" height="11" rx="0.5" fill="#2C2C2C"/><rect x="13.5" y="0" width="2.5" height="12" rx="0.5" fill="#2C2C2C"/></svg>
+                            <svg width="24" height="12" viewBox="0 0 24 12"><rect x="0" y="1" width="21" height="10" rx="2" stroke="#2C2C2C" fill="none" stroke-width="1"/><rect x="1.5" y="2.5" width="15" height="7" rx="1" fill="#2C2C2C"/><rect x="22" y="4" width="2" height="4" rx="0.5" fill="#2C2C2C"/></svg>
+                        </div>
+                    </div>
+                    <div class="ig-header">
+                        <img class="ig-avatar" src="https://images.squarespace-cdn.com/content/v1/6637ac8720301709efa8314d/c57cec66-67cf-420b-95fb-1c1553e93d1b/DSC03102.jpg" alt="Liz Cuttica" onerror="this.style.background='var(--dusty-rose)'; this.style.display='block';">
+                        <span class="ig-username">lizcuttica</span>
+                        <span class="ig-dots">...</span>
+                    </div>
+                    <div class="ig-image" style="background: linear-gradient(135deg, var(--dusty-rose), #d4b8b1); position: relative;">
+                        <div class="post-image-decoration"></div>
+                        <div style="position: relative; z-index: 1; text-align: center;">
+                            <h3 style="font-size: 24px; margin-bottom: 8px;">I was fit. I still wasn't prepared.</h3>
+                            <div class="subtitle">A story I've never told publicly.</div>
+                        </div>
+                    </div>
+                    <div class="ig-actions">
+                        <svg class="ig-action-icon" viewBox="0 0 24 24" fill="#e74c3c" stroke="none"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                        <svg class="ig-action-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"/></svg>
+                        <svg class="ig-action-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+                        <svg class="ig-action-icon ig-bookmark" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"/></svg>
+                    </div>
+                    <div class="ig-likes">4,312 likes</div>
+                    <div class="ig-caption">
+                        <span class="ig-caption-username">lizcuttica</span> Before I got pregnant, I thought being fit meant being prepared. I was a trainer. I worked out 5x/week. I ate well. I knew the science. None of that prepared me for <span class="ig-caption-more">...more</span>
+                    </div>
+                    <div class="ig-comments">View all 217 comments</div>
+                    <div class="ig-engagement" style="padding-bottom: 16px;">5 hours ago</div>
+                </div>
+                <div class="mockup-label">
+                    <div class="mockup-label-type" style="color: var(--dusty-rose);">Personal Story / Photo + Caption</div>
+                    <div class="mockup-label-note">Projected: 4,000-6,000 reach &middot; High share rate</div>
+                </div>
+            </div>
+
+            <!-- Mockup 3: CTA (Post #3) -->
+            <div>
+                <div class="phone-frame">
+                    <div class="phone-status-bar">
+                        <span>9:41</span>
+                        <div class="phone-status-icons">
+                            <svg width="16" height="12" viewBox="0 0 16 12"><rect x="0" y="4" width="3" height="8" rx="0.5" fill="#2C2C2C"/><rect x="4.5" y="2.5" width="3" height="9.5" rx="0.5" fill="#2C2C2C"/><rect x="9" y="1" width="3" height="11" rx="0.5" fill="#2C2C2C"/><rect x="13.5" y="0" width="2.5" height="12" rx="0.5" fill="#2C2C2C"/></svg>
+                            <svg width="24" height="12" viewBox="0 0 24 12"><rect x="0" y="1" width="21" height="10" rx="2" stroke="#2C2C2C" fill="none" stroke-width="1"/><rect x="1.5" y="2.5" width="15" height="7" rx="1" fill="#2C2C2C"/><rect x="22" y="4" width="2" height="4" rx="0.5" fill="#2C2C2C"/></svg>
+                        </div>
+                    </div>
+                    <div class="ig-header">
+                        <img class="ig-avatar" src="https://images.squarespace-cdn.com/content/v1/6637ac8720301709efa8314d/c57cec66-67cf-420b-95fb-1c1553e93d1b/DSC03102.jpg" alt="Liz Cuttica" onerror="this.style.background='var(--charcoal)'; this.style.display='block';">
+                        <span class="ig-username">lizcuttica</span>
+                        <span class="ig-dots">...</span>
+                    </div>
+                    <div class="ig-image" style="background: linear-gradient(135deg, var(--charcoal), #444);">
+                        <div class="post-image-decoration"></div>
+                        <div style="position: relative; z-index: 1; text-align: center;">
+                            <div style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 16px;">Free Download</div>
+                            <h3 style="font-size: 21px; margin-bottom: 12px;">5 Prenatal Exercises for Every Trimester</h3>
+                            <div style="display: inline-block; background: var(--sage); color: white; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; padding: 10px 24px; border-radius: 30px; letter-spacing: 0.5px;">Link in bio &rarr;</div>
+                        </div>
+                    </div>
+                    <div class="ig-actions">
+                        <svg class="ig-action-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                        <svg class="ig-action-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"/></svg>
+                        <svg class="ig-action-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5"><path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+                        <svg class="ig-action-icon ig-bookmark" viewBox="0 0 24 24" fill="#2C2C2C" stroke="none"><path d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"/></svg>
+                    </div>
+                    <div class="ig-likes">1,923 likes</div>
+                    <div class="ig-caption">
+                        <span class="ig-caption-username">lizcuttica</span> Not sure where to start with prenatal exercise? I made this for you. A free PDF with 5 exercises that work in every trimester <span class="ig-caption-more">...more</span>
+                    </div>
+                    <div class="ig-comments">View all 68 comments</div>
+                    <div class="ig-engagement" style="padding-bottom: 16px;">1 day ago</div>
+                </div>
+                <div class="mockup-label">
+                    <div class="mockup-label-type" style="color: var(--charcoal);">Promo / Lead Magnet CTA</div>
+                    <div class="mockup-label-note">Projected: 1,500-2,500 reach &middot; High link clicks</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: MARKETING FUNNEL -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">Section 04</div>
+            <h2 class="section-title">Marketing Funnel</h2>
+            <p class="section-subtitle">From first impression to paying customer. Every stage is designed to move people forward without feeling pushy.</p>
+        </div>
+
+        <div class="funnel-container">
+            <div class="funnel-stages">
+
+                <!-- Stage 1: Instagram Post -->
+                <div class="funnel-stage">
+                    <div class="funnel-icon-wrap" style="background: var(--sage-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="18" cy="6" r="1.5" fill="var(--sage)"/></svg>
+                    </div>
+                    <div class="funnel-stage-label">Instagram Post</div>
+                    <div class="funnel-stage-detail">Educational content, stories, and CTAs that reach new audiences</div>
+                    <div class="funnel-metric" style="color: var(--sage);">10K</div>
+                    <div class="funnel-metric-label">Impressions / mo</div>
+                    <div class="funnel-conversion">
+                        <div class="funnel-conversion-badge">3-5%</div>
+                    </div>
+                </div>
+
+                <div class="funnel-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--taupe)" stroke-width="1.5"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </div>
+
+                <!-- Stage 2: Profile Visit -->
+                <div class="funnel-stage">
+                    <div class="funnel-icon-wrap" style="background: var(--rose-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--dusty-rose)" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                    </div>
+                    <div class="funnel-stage-label">Profile Visit</div>
+                    <div class="funnel-stage-detail">Bio link visible. "Prenatal fitness expert" + free guide CTA</div>
+                    <div class="funnel-metric" style="color: var(--dusty-rose);">400</div>
+                    <div class="funnel-metric-label">Profile visits / mo</div>
+                    <div class="funnel-conversion">
+                        <div class="funnel-conversion-badge">30-40%</div>
+                    </div>
+                </div>
+
+                <div class="funnel-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--taupe)" stroke-width="1.5"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </div>
+
+                <!-- Stage 3: Landing Page -->
+                <div class="funnel-stage">
+                    <div class="funnel-icon-wrap" style="background: var(--sand-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--taupe)" stroke-width="1.5"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                    </div>
+                    <div class="funnel-stage-label">Landing Page</div>
+                    <div class="funnel-stage-detail">Free guide download page. Clean, focused, single CTA</div>
+                    <div class="funnel-metric" style="color: var(--taupe);">140</div>
+                    <div class="funnel-metric-label">Page visits / mo</div>
+                    <div class="funnel-conversion">
+                        <div class="funnel-conversion-badge">40-50%</div>
+                    </div>
+                </div>
+
+                <div class="funnel-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--taupe)" stroke-width="1.5"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </div>
+
+                <!-- Stage 4: Email Subscriber -->
+                <div class="funnel-stage">
+                    <div class="funnel-icon-wrap" style="background: rgba(44,44,44,0.06);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                    </div>
+                    <div class="funnel-stage-label">Email Subscriber</div>
+                    <div class="funnel-stage-detail">Downloads free PDF. Gets 5-email nurture sequence over 2 weeks</div>
+                    <div class="funnel-metric" style="color: var(--charcoal);">63</div>
+                    <div class="funnel-metric-label">New subs / mo</div>
+                    <div class="funnel-conversion">
+                        <div class="funnel-conversion-badge">5-8%</div>
+                    </div>
+                </div>
+
+                <div class="funnel-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--taupe)" stroke-width="1.5"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </div>
+
+                <!-- Stage 5: Course Purchase -->
+                <div class="funnel-stage">
+                    <div class="funnel-icon-wrap" style="background: rgba(139,154,126,0.15);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+                    </div>
+                    <div class="funnel-stage-label">Course Purchase</div>
+                    <div class="funnel-stage-detail">Self-Paced Prenatal Series. $149 lifetime access</div>
+                    <div class="funnel-metric" style="color: var(--sage);">4</div>
+                    <div class="funnel-metric-label">Sales / mo</div>
+                </div>
+
+            </div>
+
+            <!-- Email Sequence Detail -->
+            <div style="margin-top: 48px; padding: 32px; background: var(--cream); border-radius: 16px;">
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 8px;">Email Nurture Sequence</div>
+                    <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--charcoal);">5 Emails Over 14 Days</div>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 160px; max-width: 200px; background: white; border-radius: 12px; padding: 20px; text-align: center;">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--sage); margin-bottom: 4px;">Day 0</div>
+                        <div style="font-size: 12px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px;">Welcome + PDF</div>
+                        <div style="font-size: 11px; color: var(--taupe);">Deliver the guide, set expectations</div>
+                    </div>
+                    <div style="flex: 1; min-width: 160px; max-width: 200px; background: white; border-radius: 12px; padding: 20px; text-align: center;">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--sage); margin-bottom: 4px;">Day 3</div>
+                        <div style="font-size: 12px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px;">Liz's Story</div>
+                        <div style="font-size: 11px; color: var(--taupe);">Why she started this work</div>
+                    </div>
+                    <div style="flex: 1; min-width: 160px; max-width: 200px; background: white; border-radius: 12px; padding: 20px; text-align: center;">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--sage); margin-bottom: 4px;">Day 6</div>
+                        <div style="font-size: 12px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px;">Quick Win</div>
+                        <div style="font-size: 11px; color: var(--taupe);">One exercise they can do today</div>
+                    </div>
+                    <div style="flex: 1; min-width: 160px; max-width: 200px; background: white; border-radius: 12px; padding: 20px; text-align: center;">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--sage); margin-bottom: 4px;">Day 10</div>
+                        <div style="font-size: 12px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px;">Client Result</div>
+                        <div style="font-size: 11px; color: var(--taupe);">Testimonial + social proof</div>
+                    </div>
+                    <div style="flex: 1; min-width: 160px; max-width: 200px; background: white; border-radius: 12px; padding: 20px; text-align: center;">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--sage); margin-bottom: 4px;">Day 14</div>
+                        <div style="font-size: 12px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px;">Course Offer</div>
+                        <div style="font-size: 11px; color: var(--taupe);">$149 prenatal series CTA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Funnel Summary -->
+            <div class="funnel-summary">
+                <div class="funnel-summary-item">
+                    <div class="funnel-summary-value">~$600</div>
+                    <div class="funnel-summary-label">Monthly Revenue (Month 1)</div>
+                </div>
+                <div class="funnel-summary-item">
+                    <div class="funnel-summary-value">63</div>
+                    <div class="funnel-summary-label">Email List Growth / Mo</div>
+                </div>
+                <div class="funnel-summary-item">
+                    <div class="funnel-summary-value">$9.52</div>
+                    <div class="funnel-summary-label">Cost Per Subscriber (Organic)</div>
+                </div>
+                <div class="funnel-summary-item">
+                    <div class="funnel-summary-value">6.3%</div>
+                    <div class="funnel-summary-label">Subscriber-to-Sale Rate</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ════════════════════════════════════════════════════════ -->
+<footer class="footer">
+    <p class="footer-text">Prepared for <strong>Liz Cuttica</strong> &middot; Prenatal Fitness Content Strategy &middot; February 2026</p>
+</footer>
+
+</body>
+</html>
