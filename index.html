@@ -100,10 +100,24 @@
             text-align: center;
             padding: 120px 40px 80px;
             background: linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.squarespace-cdn.com/content/v1/6637ac8720301709efa8314d/25e3a6d5-8351-4e69-b349-ea6189a2dc67/DSC05039_Original.png') center/cover no-repeat;
+            opacity: 0.07;
         }
 
         .hero-content {
             max-width: 720px;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-label {
@@ -353,16 +367,14 @@
         }
 
         .about-image {
-            background: var(--sand);
             aspect-ratio: 3/4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: var(--taupe);
-            text-align: center;
-            padding: 20px;
-            font-style: italic;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .about-text h2 {
@@ -850,7 +862,7 @@
         <div class="section-wide">
             <div class="about-layout">
                 <div class="about-image">
-                    [Liz's photo here]
+                    <img src="https://images.squarespace-cdn.com/content/v1/6637ac8720301709efa8314d/c57cec66-67cf-420b-95fb-1c1553e93d1b/DSC03102.jpg" alt="Liz Cuttica — Certified Pregnancy and Postpartum Corrective Exercise Specialist">
                 </div>
                 <div class="about-text">
                     <div class="section-label">Meet Your Trainer</div>
