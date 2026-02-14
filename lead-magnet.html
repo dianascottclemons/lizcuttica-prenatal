@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Prenatal Exercises for Every Trimester — Liz Cuttica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --warm-white: #FFFFFF;
+            --sand: #E8E0D4;
+            --taupe: #B8A99A;
+            --charcoal: #2C2C2C;
+            --soft-black: #1A1A1A;
+            --sage: #8B9A7E;
+            --dusty-rose: #C4A7A0;
+        }
+
+        @page {
+            size: letter;
+            margin: 0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--charcoal);
+            background: white;
+            font-size: 11pt;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+        }
+
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            padding: 0.75in;
+            page-break-after: always;
+            position: relative;
+        }
+
+        /* COVER PAGE */
+        .cover {
+            background: var(--cream);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5in;
+        }
+
+        .cover-label {
+            font-size: 10pt;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 24px;
+        }
+
+        .cover h1 {
+            font-size: 36pt;
+            color: var(--soft-black);
+            margin-bottom: 16px;
+            line-height: 1.15;
+            font-weight: 400;
+        }
+
+        .cover .subtitle {
+            font-size: 13pt;
+            color: var(--taupe);
+            margin-bottom: 48px;
+            max-width: 400px;
+            line-height: 1.7;
+        }
+
+        .cover-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--sand);
+            margin: 32px auto;
+        }
+
+        .cover-author {
+            font-size: 11pt;
+            color: var(--charcoal);
+            font-weight: 400;
+        }
+
+        .cover-author span {
+            display: block;
+            font-size: 9pt;
+            color: var(--taupe);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .cover-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 24px;
+        }
+
+        .cover-footer {
+            position: absolute;
+            bottom: 0.75in;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 9pt;
+            color: var(--taupe);
+        }
+
+        /* INTRO PAGE */
+        .intro-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro-header h2 {
+            font-size: 26pt;
+            color: var(--soft-black);
+            margin-bottom: 16px;
+        }
+
+        .intro-text {
+            font-size: 11pt;
+            color: #555;
+            max-width: 5.5in;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .intro-text p {
+            margin-bottom: 16px;
+        }
+
+        .intro-callout {
+            background: var(--cream);
+            padding: 24px 32px;
+            margin: 32px 0;
+            border-left: 3px solid var(--sage);
+        }
+
+        .intro-callout p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14pt;
+            font-style: italic;
+            color: var(--charcoal);
+            margin: 0;
+        }
+
+        /* EXERCISE PAGES */
+        .exercise-page {
+            padding: 0.75in;
+        }
+
+        .exercise-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 64pt;
+            color: var(--sand);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .exercise-page h2 {
+            font-size: 22pt;
+            color: var(--soft-black);
+            margin-bottom: 6px;
+        }
+
+        .exercise-trimester {
+            font-size: 9pt;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 24px;
+        }
+
+        .why-box {
+            background: var(--cream);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+
+        .why-box h3 {
+            font-size: 11pt;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: var(--sage);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-size: 9pt;
+        }
+
+        .why-box p {
+            font-size: 11pt;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .how-section h3 {
+            font-size: 9pt;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .steps {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .steps li {
+            padding: 8px 0 8px 32px;
+            position: relative;
+            font-size: 11pt;
+            color: #555;
+            border-bottom: 1px solid #f0ece6;
+        }
+
+        .steps li::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16pt;
+            color: var(--sage);
+            font-weight: 500;
+            top: 4px;
+        }
+
+        .do-box {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .do-item {
+            flex: 1;
+            padding: 16px;
+            background: var(--sage);
+            color: white;
+        }
+
+        .do-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 8pt;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            opacity: 0.8;
+        }
+
+        .do-item p {
+            font-size: 11pt;
+            font-weight: 400;
+        }
+
+        .tip-box {
+            padding: 16px 20px;
+            border: 1px solid var(--sand);
+            margin-top: 16px;
+        }
+
+        .tip-box h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 8pt;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dusty-rose);
+            margin-bottom: 4px;
+        }
+
+        .tip-box p {
+            font-size: 10pt;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CTA PAGE */
+        .cta-page {
+            background: var(--soft-black);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5in;
+        }
+
+        .cta-page h2 {
+            font-size: 30pt;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .cta-page p {
+            color: rgba(255,255,255,0.7);
+            font-size: 12pt;
+            max-width: 400px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .cta-features {
+            list-style: none;
+            text-align: left;
+            margin: 32px 0;
+            max-width: 360px;
+        }
+
+        .cta-features li {
+            padding: 8px 0;
+            color: rgba(255,255,255,0.8);
+            font-size: 11pt;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .cta-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 8px;
+            height: 8px;
+            background: var(--sage);
+            border-radius: 50%;
+        }
+
+        .cta-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42pt;
+            color: white;
+            margin: 24px 0 8px;
+        }
+
+        .cta-detail {
+            font-size: 10pt;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        .cta-url {
+            font-size: 13pt;
+            color: var(--sage);
+            font-weight: 500;
+        }
+
+        .cta-page .about-line {
+            position: absolute;
+            bottom: 0.75in;
+            font-size: 9pt;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* BACK COVER */
+        .back-cover {
+            background: var(--cream);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5in;
+        }
+
+        .back-cover h2 {
+            font-size: 20pt;
+            color: var(--soft-black);
+            margin-bottom: 16px;
+        }
+
+        .back-cover p {
+            font-size: 10pt;
+            color: var(--taupe);
+            max-width: 400px;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .back-cover .links {
+            margin-top: 24px;
+            font-size: 10pt;
+            color: var(--charcoal);
+        }
+
+        .back-cover .links a {
+            color: var(--sage);
+            text-decoration: none;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { box-shadow: none; border: none; }
+        }
+
+        @media screen {
+            .page {
+                box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+                margin: 20px auto;
+                border: 1px solid #eee;
+            }
+            body { background: #e8e8e8; padding: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- COVER -->
+    <div class="page cover">
+        <div class="cover-label">Free Guide</div>
+        <h1>5 Prenatal Exercises for Every Trimester</h1>
+        <p class="subtitle">Safe, effective movements you can do at home in under 10 minutes.</p>
+        <div class="cover-divider"></div>
+        <img class="cover-photo" src="https://images.squarespace-cdn.com/content/v1/6637ac8720301709efa8314d/c57cec66-67cf-420b-95fb-1c1553e93d1b/DSC03102.jpg" alt="Liz Cuttica">
+        <div class="cover-author">
+            Liz Cuttica
+            <span>Certified Pregnancy &amp; Postpartum Corrective Exercise Specialist</span>
+        </div>
+        <div class="cover-footer">lizcuttica.com &nbsp;&middot;&nbsp; @lizcuttica</div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="page">
+        <div class="intro-header">
+            <h2>Before You Start</h2>
+        </div>
+        <div class="intro-text">
+            <p>These five exercises are the ones I come back to with every single client, regardless of trimester. They're safe from early pregnancy through delivery prep.</p>
+            <p>They focus on the three things that matter most: <strong>breath, core connection, and pelvic floor health.</strong></p>
+            <p>You don't need a gym. You don't need equipment (except a mat if you have one). You need 10 minutes.</p>
+
+            <div class="intro-callout">
+                <p>"Something is always better than nothing. Start here."</p>
+            </div>
+
+            <p>I've helped over 500 women move through pregnancy with confidence. These exercises are your starting point. If you want the full system &mdash; 6 progressive modules, guided workouts, breathwork, expert talks, and lifetime access &mdash; check out the Self-Paced Prenatal Series at <strong>lizcuttica.com</strong>.</p>
+            <p style="margin-top: 24px; font-size: 10pt; color: var(--taupe); font-style: italic;">Always consult your healthcare provider before starting any exercise program during pregnancy.</p>
+        </div>
+    </div>
+
+    <!-- EXERCISE 1 -->
+    <div class="page exercise-page">
+        <div class="exercise-number">01</div>
+        <h2>Diaphragmatic Breathing</h2>
+        <div class="exercise-trimester">All Trimesters</div>
+
+        <div class="why-box">
+            <h3>Why It Matters</h3>
+            <p>This is the foundation of everything. Proper breathing activates your deep core, manages pressure on your pelvic floor, and gives your baby more room. If you do nothing else from this guide, do this.</p>
+        </div>
+
+        <div class="how-section">
+            <h3>How to Do It</h3>
+            <ol class="steps">
+                <li data-step="1">Sit comfortably or lie on your side</li>
+                <li data-step="2">Place one hand on your chest, one on your belly</li>
+                <li data-step="3">Inhale through your nose &mdash; feel your belly and ribs expand outward (not up)</li>
+                <li data-step="4">Exhale through your mouth &mdash; feel your belly gently draw in</li>
+                <li data-step="5">The hand on your chest should barely move</li>
+            </ol>
+        </div>
+
+        <div class="do-box">
+            <div class="do-item">
+                <h4>Reps</h4>
+                <p>10 slow breaths</p>
+            </div>
+            <div class="do-item">
+                <h4>Frequency</h4>
+                <p>2-3 times per day</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h4>Tip</h4>
+            <p>Practice this during stressful moments too. It activates your parasympathetic nervous system &mdash; calming for you and baby.</p>
+        </div>
+    </div>
+
+    <!-- EXERCISE 2 -->
+    <div class="page exercise-page">
+        <div class="exercise-number">02</div>
+        <h2>Cat-Cow Stretch</h2>
+        <div class="exercise-trimester">All Trimesters</div>
+
+        <div class="why-box">
+            <h3>Why It Matters</h3>
+            <p>Relieves back tension, improves spinal mobility, and helps baby find a good position. As your belly grows, your lower back takes on more load &mdash; this counteracts it.</p>
+        </div>
+
+        <div class="how-section">
+            <h3>How to Do It</h3>
+            <ol class="steps">
+                <li data-step="1">Start on all fours &mdash; hands under shoulders, knees under hips</li>
+                <li data-step="2">Inhale: gently arch your back, lifting your tailbone and chest (cow)</li>
+                <li data-step="3">Exhale: round your spine, tucking your chin and tailbone (cat)</li>
+                <li data-step="4">Move slowly &mdash; let your breath guide the pace</li>
+            </ol>
+        </div>
+
+        <div class="do-box">
+            <div class="do-item">
+                <h4>Reps</h4>
+                <p>8-10 rounds</p>
+            </div>
+            <div class="do-item">
+                <h4>Frequency</h4>
+                <p>Daily</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h4>Third Trimester Tip</h4>
+            <p>Make the movements smaller and focus on the exhale/round portion. This helps create space for baby.</p>
+        </div>
+    </div>
+
+    <!-- EXERCISE 3 -->
+    <div class="page exercise-page">
+        <div class="exercise-number">03</div>
+        <h2>Glute Bridges</h2>
+        <div class="exercise-trimester">All Trimesters &mdash; Modified in T3</div>
+
+        <div class="why-box">
+            <h3>Why It Matters</h3>
+            <p>Your glutes are the powerhouse of your pelvis. Strong glutes support your lower back, stabilize your hips, and help during labor. Most pregnant women underuse their glutes &mdash; this fixes that.</p>
+        </div>
+
+        <div class="how-section">
+            <h3>How to Do It</h3>
+            <ol class="steps">
+                <li data-step="1">Lie on your back, knees bent, feet flat on the floor hip-width apart</li>
+                <li data-step="2">Exhale and press through your heels to lift your hips</li>
+                <li data-step="3">Squeeze your glutes at the top &mdash; hold for 2 seconds</li>
+                <li data-step="4">Inhale and slowly lower</li>
+            </ol>
+        </div>
+
+        <div class="do-box">
+            <div class="do-item">
+                <h4>Reps</h4>
+                <p>12-15 reps, 2 sets</p>
+            </div>
+            <div class="do-item">
+                <h4>Frequency</h4>
+                <p>3-4x per week</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h4>After 20 Weeks</h4>
+            <p>Avoid lying flat on your back for extended periods. Prop your upper back on a pillow or couch cushion so your heart is above your hips.</p>
+        </div>
+    </div>
+
+    <!-- EXERCISE 4 -->
+    <div class="page exercise-page">
+        <div class="exercise-number">04</div>
+        <h2>Supported Squat Hold</h2>
+        <div class="exercise-trimester">All Trimesters</div>
+
+        <div class="why-box">
+            <h3>Why It Matters</h3>
+            <p>Squatting opens your pelvis, strengthens your legs, and is one of the most functional positions for labor. The supported version keeps you safe and stable as your center of gravity shifts.</p>
+        </div>
+
+        <div class="how-section">
+            <h3>How to Do It</h3>
+            <ol class="steps">
+                <li data-step="1">Stand with feet slightly wider than hip-width, toes turned out slightly</li>
+                <li data-step="2">Hold onto a doorframe, countertop, or sturdy chair for support</li>
+                <li data-step="3">Inhale and lower into a squat &mdash; as deep as comfortable</li>
+                <li data-step="4">Exhale and hold for 5-10 seconds</li>
+                <li data-step="5">Press through your heels to stand</li>
+            </ol>
+        </div>
+
+        <div class="do-box">
+            <div class="do-item">
+                <h4>Reps</h4>
+                <p>8-10 reps</p>
+            </div>
+            <div class="do-item">
+                <h4>Frequency</h4>
+                <p>3-4x per week</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h4>Tip</h4>
+            <p>If deep squatting is uncomfortable, only go to where it feels good. Depth improves over time.</p>
+        </div>
+    </div>
+
+    <!-- EXERCISE 5 -->
+    <div class="page exercise-page">
+        <div class="exercise-number">05</div>
+        <h2>Side-Lying Hip Abduction</h2>
+        <div class="exercise-trimester">All Trimesters</div>
+
+        <div class="why-box">
+            <h3>Why It Matters</h3>
+            <p>Stabilizes your pelvis, strengthens your outer hips, and helps prevent the hip pain that many pregnant women experience in the second and third trimesters.</p>
+        </div>
+
+        <div class="how-section">
+            <h3>How to Do It</h3>
+            <ol class="steps">
+                <li data-step="1">Lie on your side, bottom knee bent for stability, top leg straight</li>
+                <li data-step="2">Exhale and lift your top leg to hip height &mdash; keep your hips stacked (don't roll back)</li>
+                <li data-step="3">Hold for 2 seconds at the top</li>
+                <li data-step="4">Inhale and slowly lower</li>
+            </ol>
+        </div>
+
+        <div class="do-box">
+            <div class="do-item">
+                <h4>Reps</h4>
+                <p>12-15 each side, 2 sets</p>
+            </div>
+            <div class="do-item">
+                <h4>Frequency</h4>
+                <p>3-4x per week</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h4>Tip</h4>
+            <p>If this feels easy, add a light resistance band around your thighs for extra challenge.</p>
+        </div>
+    </div>
+
+    <!-- CTA PAGE -->
+    <div class="page cta-page">
+        <h2>Want the Full Program?</h2>
+        <p>These 5 exercises are a starting point. The Self-Paced Prenatal Series gives you the complete system.</p>
+
+        <ul class="cta-features">
+            <li>6 progressive modules from first trimester through labor prep</li>
+            <li>20-minute guided workouts you can do at home</li>
+            <li>Breathwork and pelvic floor training in every session</li>
+            <li>Expert talks on nutrition, mental health, and birth prep</li>
+            <li>Lifetime access &mdash; use it for every pregnancy</li>
+        </ul>
+
+        <div class="cta-price">$149</div>
+        <div class="cta-detail">Lifetime Access</div>
+
+        <div class="cta-url">lizcuttica.com</div>
+    </div>
+
+    <!-- BACK COVER -->
+    <div class="page back-cover">
+        <img class="cover-photo" src="https://images.squarespace-cdn.com/content/v1/6637ac8720301709efa8314d/c57cec66-67cf-420b-95fb-1c1553e93d1b/DSC03102.jpg" alt="Liz Cuttica">
+        <h2>About Liz Cuttica</h2>
+        <p>Liz is a certified Pregnancy &amp; Postpartum Corrective Exercise Specialist with 15+ years of experience. After her own difficult pregnancy and C-section recovery, she founded her practice to help women move through pregnancy and postpartum with confidence.</p>
+        <p>She's worked with 500+ women and counting.</p>
+        <div class="links">
+            <strong>lizcuttica.com</strong> &nbsp;&middot;&nbsp; <strong>@lizcuttica</strong> &nbsp;&middot;&nbsp; <strong>liz@lizcuttica.com</strong>
+        </div>
+    </div>
+
+</body>
+</html>
