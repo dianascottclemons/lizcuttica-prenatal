@@ -602,6 +602,764 @@
             color: var(--taupe);
         }
 
+        /* ── Platform Distribution Grid ── */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .platform-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 28px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-left: 4px solid var(--sage);
+            position: relative;
+        }
+        .platform-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+        .platform-card:nth-child(2) { border-left-color: var(--dusty-rose); }
+        .platform-card:nth-child(3) { border-left-color: var(--taupe); }
+        .platform-card:nth-child(4) { border-left-color: var(--charcoal); }
+        .platform-card:nth-child(5) { border-left-color: var(--sage); }
+        .platform-card:nth-child(6) { border-left-color: var(--dusty-rose); }
+        .platform-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        .platform-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .platform-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        .platform-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+        .platform-description {
+            font-size: 14px;
+            color: var(--charcoal);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .platform-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .platform-timeline {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sage);
+        }
+        .platform-timeline svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+        .platform-why {
+            font-size: 13px;
+            color: var(--taupe);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        /* ── AI Search Mockups ── */
+        .ai-mockups-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+        .ai-mockup {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .ai-mockup-label {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        /* ChatGPT Mockup */
+        .chatgpt-mockup {
+            display: flex;
+            min-height: 520px;
+        }
+        .chatgpt-sidebar {
+            width: 56px;
+            background: #171717;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 16px 0;
+            gap: 16px;
+        }
+        .chatgpt-sidebar-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chatgpt-sidebar-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+        .chatgpt-main {
+            flex: 1;
+            background: #212121;
+            padding: 32px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .chatgpt-model-selector {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ececec;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .chatgpt-model-selector svg {
+            width: 14px;
+            height: 14px;
+            opacity: 0.5;
+        }
+        .chatgpt-user-msg {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .chatgpt-user-bubble {
+            background: #2f2f2f;
+            color: #ececec;
+            padding: 14px 20px;
+            border-radius: 20px;
+            max-width: 75%;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .chatgpt-response {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .chatgpt-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #19c37d;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chatgpt-avatar svg {
+            width: 20px;
+            height: 20px;
+        }
+        .chatgpt-text {
+            color: #d1d5db;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 680px;
+        }
+        .chatgpt-text strong {
+            color: #ececec;
+            font-weight: 600;
+        }
+        .chatgpt-text .highlight-name {
+            color: #19c37d;
+            font-weight: 700;
+        }
+        .chatgpt-sources {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid #333;
+        }
+        .chatgpt-sources-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #888;
+            margin-bottom: 6px;
+        }
+        .chatgpt-source-link {
+            font-size: 13px;
+            color: #7ab8f5;
+            display: block;
+            line-height: 1.8;
+        }
+
+        /* Google AI Overview Mockup */
+        .google-mockup {
+            background: white;
+        }
+        .google-search-bar {
+            display: flex;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid #e0e0e0;
+            gap: 12px;
+        }
+        .google-logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            flex-shrink: 0;
+        }
+        .google-logo .g-blue { color: #4285f4; }
+        .google-logo .g-red { color: #ea4335; }
+        .google-logo .g-yellow { color: #fbbc05; }
+        .google-logo .g-green { color: #34a853; }
+        .google-search-input {
+            flex: 1;
+            background: #f1f3f4;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: var(--charcoal);
+            font-family: 'Inter', sans-serif;
+        }
+        .google-tabs {
+            display: flex;
+            gap: 0;
+            padding: 0 24px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .google-tab {
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #666;
+            cursor: pointer;
+        }
+        .google-tab.active {
+            color: #1a73e8;
+            border-bottom: 3px solid #1a73e8;
+            font-weight: 500;
+        }
+        .google-ai-container {
+            padding: 24px;
+        }
+        .google-ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #4285f4, #a371f7);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+        }
+        .google-ai-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+        .google-ai-box {
+            background: linear-gradient(135deg, rgba(66,133,244,0.04), rgba(163,113,247,0.04));
+            border: 1px solid rgba(66,133,244,0.15);
+            border-radius: 16px;
+            padding: 28px;
+        }
+        .google-ai-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #3c4043;
+        }
+        .google-ai-text strong {
+            color: #1a73e8;
+        }
+        .google-ai-text .highlight-name {
+            color: #1a73e8;
+            font-weight: 700;
+        }
+        .google-ai-quote {
+            font-style: italic;
+            color: #5f6368;
+        }
+        .google-source-chips {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .google-source-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f1f3f4;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 12px;
+            color: #3c4043;
+        }
+        .google-source-chip-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4285f4;
+        }
+
+        /* Perplexity Mockup */
+        .perplexity-mockup {
+            background: #191a1a;
+            color: #e8e8e8;
+        }
+        .perplexity-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 32px;
+            border-bottom: 1px solid #2a2b2b;
+        }
+        .perplexity-logo {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #20b2aa, #1e90ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .perplexity-logo svg {
+            width: 16px;
+            height: 16px;
+        }
+        .perplexity-brand {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e8e8e8;
+        }
+        .perplexity-body {
+            padding: 32px;
+        }
+        .perplexity-question {
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+        .perplexity-answer-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #20b2aa;
+            margin-bottom: 16px;
+        }
+        .perplexity-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #b8b8b8;
+            margin-bottom: 20px;
+        }
+        .perplexity-text strong {
+            color: #e8e8e8;
+            font-weight: 600;
+        }
+        .perplexity-text .highlight-name {
+            color: #20b2aa;
+            font-weight: 700;
+        }
+        .perplexity-expert {
+            padding: 16px 0;
+        }
+        .perplexity-expert + .perplexity-expert {
+            border-top: 1px solid #2a2b2b;
+        }
+        .perplexity-expert-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #e8e8e8;
+            margin-bottom: 6px;
+        }
+        .perplexity-expert-desc {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.6;
+        }
+        .perplexity-expert-link {
+            color: #20b2aa;
+            font-size: 13px;
+        }
+        .perplexity-sources {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #2a2b2b;
+        }
+        .perplexity-sources-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .perplexity-source-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 0;
+        }
+        .perplexity-source-num {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            background: #2a2b2b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: #888;
+            flex-shrink: 0;
+        }
+        .perplexity-source-text {
+            font-size: 13px;
+            color: #20b2aa;
+        }
+
+        /* AI Callout Box */
+        .ai-callout {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            margin-top: 48px;
+            border-left: 4px solid var(--sage);
+        }
+        .ai-callout-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
+        .ai-callout-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ai-callout-list li {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .ai-callout-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--sage);
+        }
+        .ai-callout-quote {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--sand);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--charcoal);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* ── Competitive Landscape ── */
+        .comp-table-wrap {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .comp-table thead th {
+            padding: 24px 20px 16px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--taupe);
+            border-bottom: 2px solid var(--sand);
+        }
+        .comp-table thead th:first-child {
+            padding-left: 32px;
+        }
+        .comp-table thead th.col-liz {
+            background: var(--sage-light);
+            color: var(--sage);
+        }
+        .comp-table tbody td {
+            padding: 18px 20px;
+            font-size: 14px;
+            color: var(--charcoal);
+            border-bottom: 1px solid rgba(232,224,212,0.5);
+            vertical-align: top;
+        }
+        .comp-table tbody td:first-child {
+            padding-left: 32px;
+            font-weight: 600;
+            font-size: 13px;
+            color: #555;
+            white-space: nowrap;
+        }
+        .comp-table tbody td.col-liz {
+            background: var(--sage-light);
+        }
+        .comp-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .comp-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+        .comp-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .comp-dot.green { background: #5a9e6f; }
+        .comp-dot.yellow { background: #d4a843; }
+        .comp-dot.red { background: #c0616b; }
+        .comp-bold {
+            font-weight: 700;
+        }
+        .comp-note {
+            display: block;
+            font-size: 11px;
+            color: var(--taupe);
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .comp-callout {
+            padding: 32px;
+            background: var(--cream);
+            border-radius: 16px;
+            margin-top: 32px;
+            text-align: center;
+        }
+        .comp-callout p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--charcoal);
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .comp-callout p strong {
+            color: var(--sage);
+        }
+
+        /* ── Growth Roadmap ── */
+        .roadmap-container {
+            position: relative;
+        }
+        .roadmap-line {
+            position: absolute;
+            top: 56px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--sand);
+            border-radius: 2px;
+            z-index: 0;
+        }
+        .roadmap-line-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 33%;
+            height: 100%;
+            background: var(--sage);
+            border-radius: 2px;
+        }
+        .roadmap-phases {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            position: relative;
+            z-index: 1;
+        }
+        .roadmap-phase {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .roadmap-phase:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+        .roadmap-phase-header {
+            padding: 28px 28px 20px;
+            position: relative;
+        }
+        .roadmap-phase:nth-child(1) .roadmap-phase-header { border-top: 4px solid var(--sage); }
+        .roadmap-phase:nth-child(2) .roadmap-phase-header { border-top: 4px solid var(--dusty-rose); }
+        .roadmap-phase:nth-child(3) .roadmap-phase-header { border-top: 4px solid var(--charcoal); }
+        .roadmap-phase-num {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 12px;
+        }
+        .roadmap-phase:nth-child(1) .roadmap-phase-num { background: var(--sage); }
+        .roadmap-phase:nth-child(2) .roadmap-phase-num { background: var(--dusty-rose); }
+        .roadmap-phase:nth-child(3) .roadmap-phase-num { background: var(--charcoal); }
+        .roadmap-phase-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+        .roadmap-phase-range {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+        .roadmap-phase-body {
+            padding: 0 28px 28px;
+        }
+        .roadmap-actions {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .roadmap-actions li {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+            padding: 6px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+        .roadmap-actions li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .roadmap-phase:nth-child(1) .roadmap-actions li::before { background: var(--sage); }
+        .roadmap-phase:nth-child(2) .roadmap-actions li::before { background: var(--dusty-rose); }
+        .roadmap-phase:nth-child(3) .roadmap-actions li::before { background: var(--charcoal); }
+        .roadmap-time-commit {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--taupe);
+            margin-bottom: 16px;
+        }
+        .roadmap-time-commit svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+        .roadmap-revenue {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+        .roadmap-revenue-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .roadmap-phase:nth-child(1) .roadmap-revenue-value { color: var(--sage); }
+        .roadmap-phase:nth-child(2) .roadmap-revenue-value { color: var(--dusty-rose); }
+        .roadmap-phase:nth-child(3) .roadmap-revenue-value { color: var(--charcoal); }
+        .roadmap-revenue-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+        .roadmap-total {
+            margin-top: 48px;
+            background: var(--charcoal);
+            border-radius: 16px;
+            padding: 36px 40px;
+            text-align: center;
+        }
+        .roadmap-total-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 300;
+            color: var(--sage);
+            margin-bottom: 8px;
+        }
+        .roadmap-total-label {
+            font-size: 16px;
+            color: var(--taupe);
+            margin-bottom: 4px;
+        }
+        .roadmap-total-sublabel {
+            font-size: 14px;
+            color: var(--cream);
+            font-weight: 500;
+        }
+
         /* ── Footer ── */
         .footer {
             text-align: center;
@@ -629,6 +1387,18 @@
             .funnel-arrow { display: none; }
             .funnel-summary { flex-direction: column; gap: 24px; }
             .section-title { font-size: 30px; }
+            .platform-grid { grid-template-columns: 1fr; }
+            .chatgpt-mockup { flex-direction: column; }
+            .chatgpt-sidebar { width: 100%; flex-direction: row; padding: 10px 16px; }
+            .chatgpt-main { padding: 20px; }
+            .chatgpt-user-bubble { max-width: 90%; }
+            .google-search-bar { flex-direction: column; align-items: stretch; }
+            .google-logo { text-align: center; }
+            .comp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .comp-table { min-width: 640px; }
+            .roadmap-phases { grid-template-columns: 1fr; }
+            .roadmap-line { display: none; }
+            .roadmap-total-value { font-size: 32px; }
         }
     </style>
 </head>
@@ -640,7 +1410,7 @@
 <header class="hero">
     <div class="hero-badge">Strategy Presentation</div>
     <h1>Marketing Strategy &mdash; <span>Liz Cuttica</span></h1>
-    <p>Content Calendar, Instagram Strategy &amp; Funnel Design</p>
+    <p>Content Strategy, Multi-Platform Distribution &amp; Growth Roadmap</p>
 </header>
 
 <main>
@@ -1217,6 +1987,495 @@
             </div>
         </div>
 
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: MULTI-PLATFORM DISTRIBUTION -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">Section 05</div>
+            <h2 class="section-title">Beyond Instagram &mdash; Multi-Platform Distribution</h2>
+            <p class="section-subtitle">Instagram is just the starting point. These six channels create a distribution engine that compounds over time.</p>
+        </div>
+
+        <div class="platform-grid">
+
+            <!-- Pinterest -->
+            <div class="platform-card">
+                <div class="platform-card-header">
+                    <div class="platform-icon" style="background: var(--sage-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.808-2.425.853 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.48 1.806 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.282a.3.3 0 01.069.288l-.278 1.133c-.044.183-.146.222-.337.134-1.254-.584-2.038-2.416-2.038-3.888 0-3.168 2.302-6.078 6.64-6.078 3.486 0 6.197 2.486 6.197 5.81 0 3.465-2.185 6.254-5.22 6.254-1.02 0-1.978-.53-2.306-1.155l-.627 2.39c-.227.874-.84 1.97-1.252 2.636C9.88 21.876 10.92 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+                    </div>
+                    <div class="platform-name">Pinterest</div>
+                </div>
+                <div class="platform-description">Prenatal exercise pins linking to free guide and blog posts</div>
+                <div class="platform-meta">
+                    <div class="platform-timeline">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        3-6 months to compound
+                    </div>
+                    <div class="platform-why">#1 platform for pregnancy content. Pins are evergreen &mdash; they drive traffic for years.</div>
+                </div>
+            </div>
+
+            <!-- YouTube Shorts -->
+            <div class="platform-card">
+                <div class="platform-card-header">
+                    <div class="platform-icon" style="background: var(--rose-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--dusty-rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <div class="platform-name">YouTube Shorts</div>
+                </div>
+                <div class="platform-description">60-second exercise demos clipped from existing Vimeo recordings</div>
+                <div class="platform-meta">
+                    <div class="platform-timeline" style="color: var(--dusty-rose);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Immediate &mdash; content already exists
+                    </div>
+                    <div class="platform-why">YouTube is the #2 search engine. Short-form video has the highest engagement rate.</div>
+                </div>
+            </div>
+
+            <!-- Babylist -->
+            <div class="platform-card">
+                <div class="platform-card-header">
+                    <div class="platform-icon" style="background: var(--sand-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--taupe)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8V6a2 2 0 00-2-2H5a2 2 0 00-2 2v2"/><path d="M21 12H3"/><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8v12"/><path d="M8 4l4 4 4-4"/></svg>
+                    </div>
+                    <div class="platform-name">Babylist</div>
+                </div>
+                <div class="platform-description">Expert program application + course listing in Babylist Shop</div>
+                <div class="platform-meta">
+                    <div class="platform-timeline" style="color: var(--taupe);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        1-2 months to get listed
+                    </div>
+                    <div class="platform-why">Millions of expecting parents browse Babylist. Course appears alongside registry items.</div>
+                </div>
+            </div>
+
+            <!-- Podcast Circuit -->
+            <div class="platform-card">
+                <div class="platform-card-header">
+                    <div class="platform-icon" style="background: rgba(44,44,44,0.06);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    </div>
+                    <div class="platform-name">Podcast Circuit</div>
+                </div>
+                <div class="platform-description">Guest appearances on prenatal/motherhood podcasts (Diana writes pitches, Liz shows up)</div>
+                <div class="platform-meta">
+                    <div class="platform-timeline" style="color: var(--charcoal);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        2-3 months for first appearances
+                    </div>
+                    <div class="platform-why">30 minutes of Liz's time = thousands of new listeners who hear her expertise firsthand.</div>
+                </div>
+            </div>
+
+            <!-- BabyCenter / What to Expect -->
+            <div class="platform-card">
+                <div class="platform-card-header">
+                    <div class="platform-icon" style="background: var(--sage-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <div class="platform-name">BabyCenter / What to Expect</div>
+                </div>
+                <div class="platform-description">Expert contributor articles &mdash; one article gets Liz's name on a site with millions of monthly visitors</div>
+                <div class="platform-meta">
+                    <div class="platform-timeline">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        1-2 months to publish
+                    </div>
+                    <div class="platform-why">Authoritative backlinks that boost SEO and AI discoverability simultaneously.</div>
+                </div>
+            </div>
+
+            <!-- OB/Midwife Referral Network -->
+            <div class="platform-card">
+                <div class="platform-card-header">
+                    <div class="platform-icon" style="background: var(--rose-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--dusty-rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L12 8"/><path d="M9 5h6"/><path d="M4.93 10a10 10 0 0014.14 0"/><path d="M12 22c-4.418 0-8-3.134-8-7h16c0 3.866-3.582 7-8 7z"/></svg>
+                    </div>
+                    <div class="platform-name">OB/Midwife Referral Network</div>
+                </div>
+                <div class="platform-description">Build relationships with healthcare providers who recommend Liz's courses to patients</div>
+                <div class="platform-meta">
+                    <div class="platform-timeline" style="color: var(--dusty-rose);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        3-6 months to build network
+                    </div>
+                    <div class="platform-why">The ultimate credibility signal. "Your doctor recommends this" is unbeatable positioning.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: AI SEARCH DISCOVERABILITY -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">Section 06</div>
+            <h2 class="section-title">AI Search Discoverability</h2>
+            <p class="section-subtitle">When someone asks an AI "What are the best prenatal exercises?" &mdash; Liz should be the answer. Here's what that looks like.</p>
+        </div>
+
+        <div class="ai-mockups-grid">
+
+            <!-- ChatGPT Mockup -->
+            <div>
+                <div class="ai-mockup">
+                    <div class="chatgpt-mockup">
+                        <div class="chatgpt-sidebar">
+                            <div class="chatgpt-sidebar-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                            </div>
+                            <div class="chatgpt-sidebar-icon" style="background: #333;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ececec" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                            </div>
+                        </div>
+                        <div class="chatgpt-main">
+                            <div class="chatgpt-model-selector">
+                                ChatGPT <span style="opacity: 0.5;">4o</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            </div>
+
+                            <div class="chatgpt-user-msg">
+                                <div class="chatgpt-user-bubble">What are the best prenatal exercises I can do at home?</div>
+                            </div>
+
+                            <div class="chatgpt-response">
+                                <div class="chatgpt-avatar">
+                                    <svg viewBox="0 0 24 24" fill="white" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
+                                </div>
+                                <div class="chatgpt-text">
+                                    Here are some of the most recommended prenatal exercises you can safely do at home:<br><br>
+                                    <strong>1. Diaphragmatic Breathing</strong> &mdash; This is the foundation exercise recommended by prenatal fitness specialists like <span class="highlight-name">Liz Cuttica</span>, a certified Pregnancy &amp; Postpartum Corrective Exercise Specialist with 15+ years of experience. Proper breathing activates your deep core and manages pelvic floor pressure.<br><br>
+                                    <strong>2. Cat-Cow Stretch</strong> &mdash; Relieves back tension and improves spinal mobility. Safe throughout all trimesters.<br><br>
+                                    <strong>3. Glute Bridges</strong> &mdash; Strengthens your posterior chain and supports your lower back as your center of gravity shifts.<br><br>
+                                    <strong>4. Supported Squat Hold</strong> &mdash; Opens the pelvis and strengthens legs for labor endurance.<br><br>
+                                    <strong>5. Pelvic Floor Exercises</strong> &mdash; Beyond just kegels, a coordinated approach to pelvic floor health is essential.<br><br>
+                                    For a complete, structured prenatal program, <span class="highlight-name">Cuttica's</span> Self-Paced Prenatal Series offers 6 progressive modules designed for each trimester. Her approach focuses on corrective exercise specifically for pregnancy &mdash; addressing diastasis recti prevention, pelvic floor health, and labor preparation.
+
+                                    <div class="chatgpt-sources">
+                                        <div class="chatgpt-sources-label">Sources</div>
+                                        <span class="chatgpt-source-link">lizcuttica.com</span>
+                                        <span class="chatgpt-source-link">BabyCenter Expert Contributors</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-mockup-label">ChatGPT Response Mockup</div>
+            </div>
+
+            <!-- Google AI Overview Mockup -->
+            <div>
+                <div class="ai-mockup google-mockup">
+                    <div class="google-search-bar">
+                        <div class="google-logo"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></div>
+                        <div class="google-search-input">safe prenatal exercises every trimester</div>
+                    </div>
+                    <div class="google-tabs">
+                        <div class="google-tab active">All</div>
+                        <div class="google-tab">Images</div>
+                        <div class="google-tab">Videos</div>
+                        <div class="google-tab">Shopping</div>
+                        <div class="google-tab">News</div>
+                    </div>
+                    <div class="google-ai-container">
+                        <div class="google-ai-badge">
+                            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>
+                            AI Overview
+                        </div>
+                        <div class="google-ai-box">
+                            <div class="google-ai-text">
+                                According to prenatal fitness expert <span class="highlight-name">Liz Cuttica</span> (PCES certified, 500+ clients), the most important prenatal exercises focus on three areas: breath, core connection, and pelvic floor health. Key exercises include diaphragmatic breathing, cat-cow stretches, glute bridges, supported squats, and hip abductions.<br><br>
+                                Cuttica emphasizes that proper breathing is the foundation &mdash; <span class="google-ai-quote">"if you do nothing else, learn to breathe properly."</span><br><br>
+                                These exercises are safe for most pregnancies throughout all trimesters, though modifications may be needed as you progress. Always consult your healthcare provider before starting a new exercise program.
+                            </div>
+                            <div class="google-source-chips">
+                                <div class="google-source-chip">
+                                    <div class="google-source-chip-dot"></div>
+                                    lizcuttica.com
+                                </div>
+                                <div class="google-source-chip">
+                                    <div class="google-source-chip-dot" style="background: #ea4335;"></div>
+                                    BabyCenter
+                                </div>
+                                <div class="google-source-chip">
+                                    <div class="google-source-chip-dot" style="background: #34a853;"></div>
+                                    What to Expect
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-mockup-label">Google AI Overview Mockup</div>
+            </div>
+
+            <!-- Perplexity Mockup -->
+            <div>
+                <div class="ai-mockup perplexity-mockup">
+                    <div class="perplexity-header">
+                        <div class="perplexity-logo">
+                            <svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="white" stroke-width="1.5" fill="none"/></svg>
+                        </div>
+                        <div class="perplexity-brand">perplexity</div>
+                    </div>
+                    <div class="perplexity-body">
+                        <div class="perplexity-question">Who are the best prenatal fitness experts?</div>
+                        <div class="perplexity-answer-label">Answer</div>
+                        <div class="perplexity-text">The prenatal fitness space has several notable experts who combine evidence-based methodology with accessible programming:</div>
+
+                        <div class="perplexity-expert">
+                            <div class="perplexity-expert-name"><span class="highlight-name" style="color: #20b2aa;">Liz Cuttica</span></div>
+                            <div class="perplexity-expert-desc">One of the most experienced prenatal corrective exercise specialists, with 500+ clients and PCES certification. Known for her evidence-based approach to diastasis recti prevention and pelvic floor health. Offers both 1:1 training and a self-paced prenatal series. <span class="perplexity-expert-link">[lizcuttica.com]</span></div>
+                        </div>
+
+                        <div class="perplexity-expert">
+                            <div class="perplexity-expert-name">Expecting and Empowered</div>
+                            <div class="perplexity-expert-desc">Founded by a physical therapist and nurse, offering week-by-week workout plans organized by trimester with clear modifications and progressions.</div>
+                        </div>
+
+                        <div class="perplexity-expert">
+                            <div class="perplexity-expert-name">The Bloom Method</div>
+                            <div class="perplexity-expert-desc">Breathwork-focused prenatal programming with 600+ classes. Known for their emphasis on core and pelvic floor coordination throughout pregnancy.</div>
+                        </div>
+
+                        <div class="perplexity-sources">
+                            <div class="perplexity-sources-label">Sources</div>
+                            <div class="perplexity-source-item">
+                                <div class="perplexity-source-num">1</div>
+                                <div class="perplexity-source-text">lizcuttica.com &mdash; About &amp; Credentials</div>
+                            </div>
+                            <div class="perplexity-source-item">
+                                <div class="perplexity-source-num">2</div>
+                                <div class="perplexity-source-text">BabyCenter &mdash; Expert Contributors Directory</div>
+                            </div>
+                            <div class="perplexity-source-item">
+                                <div class="perplexity-source-num">3</div>
+                                <div class="perplexity-source-text">What to Expect &mdash; Prenatal Exercise Guide</div>
+                            </div>
+                            <div class="perplexity-source-item">
+                                <div class="perplexity-source-num">4</div>
+                                <div class="perplexity-source-text">expectingandempowered.com</div>
+                            </div>
+                            <div class="perplexity-source-item">
+                                <div class="perplexity-source-num">5</div>
+                                <div class="perplexity-source-text">thebloommethod.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-mockup-label">Perplexity Answer Mockup</div>
+            </div>
+
+        </div>
+
+        <!-- How This Happens Callout -->
+        <div class="ai-callout">
+            <div class="ai-callout-title">How This Happens</div>
+            <ul class="ai-callout-list">
+                <li>SEO blog posts targeting prenatal fitness queries (2-3/month, written by Claude)</li>
+                <li>Schema markup on the website identifying Liz as a prenatal fitness expert</li>
+                <li>Expert contributor articles on BabyCenter, What to Expect (high-authority sites that AI models trust)</li>
+                <li>Structured content across enough platforms that AI crawlers see Liz as an authority</li>
+            </ul>
+            <div class="ai-callout-quote">"This isn't gaming the system. It's making sure the most qualified person shows up when someone asks for help."</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SECTION 7: COMPETITIVE LANDSCAPE -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">Section 07</div>
+            <h2 class="section-title">Competitive Landscape</h2>
+            <p class="section-subtitle">Liz doesn't need to be the biggest. She needs to own the lane no one else can credibly occupy.</p>
+        </div>
+
+        <div class="comp-table-wrap">
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th style="width: 22%;">Axis</th>
+                        <th style="width: 26%;">Sculpt Society</th>
+                        <th style="width: 26%;">Expecting &amp; Empowered</th>
+                        <th style="width: 26%;" class="col-liz">Liz Cuttica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prenatal expertise depth</td>
+                        <td><span class="comp-indicator"><span class="comp-dot yellow"></span> Medium</span></td>
+                        <td><span class="comp-indicator"><span class="comp-dot green"></span> High</span></td>
+                        <td class="col-liz"><span class="comp-indicator comp-bold"><span class="comp-dot green"></span> Highest</span></td>
+                    </tr>
+                    <tr>
+                        <td>Brand / audience size</td>
+                        <td><span class="comp-indicator"><span class="comp-dot green"></span> Large</span></td>
+                        <td><span class="comp-indicator"><span class="comp-dot yellow"></span> Medium</span></td>
+                        <td class="col-liz"><span class="comp-indicator"><span class="comp-dot red"></span> Starting</span><span class="comp-note">This is what we're building</span></td>
+                    </tr>
+                    <tr>
+                        <td>Corrective exercise focus</td>
+                        <td><span class="comp-indicator"><span class="comp-dot red"></span> None</span></td>
+                        <td><span class="comp-indicator"><span class="comp-dot yellow"></span> Some</span></td>
+                        <td class="col-liz"><span class="comp-indicator comp-bold"><span class="comp-dot green"></span> Core differentiator</span></td>
+                    </tr>
+                    <tr>
+                        <td>Content production cost</td>
+                        <td><span class="comp-indicator"><span class="comp-dot red"></span> High</span></td>
+                        <td><span class="comp-indicator"><span class="comp-dot yellow"></span> Medium</span></td>
+                        <td class="col-liz"><span class="comp-indicator"><span class="comp-dot green"></span> Low</span><span class="comp-note">Existing recordings</span></td>
+                    </tr>
+                    <tr>
+                        <td>Healthcare provider trust</td>
+                        <td><span class="comp-indicator"><span class="comp-dot red"></span> Low</span></td>
+                        <td><span class="comp-indicator"><span class="comp-dot yellow"></span> Medium</span></td>
+                        <td class="col-liz"><span class="comp-indicator"><span class="comp-dot green"></span> High</span></td>
+                    </tr>
+                    <tr>
+                        <td>AI discoverability</td>
+                        <td><span class="comp-indicator"><span class="comp-dot red"></span> None</span></td>
+                        <td><span class="comp-indicator"><span class="comp-dot red"></span> None</span></td>
+                        <td class="col-liz"><span class="comp-indicator comp-bold"><span class="comp-dot green"></span> First mover</span></td>
+                    </tr>
+                    <tr>
+                        <td>Pricing</td>
+                        <td><span class="comp-indicator">$24.99/mo ($300/yr)</span></td>
+                        <td><span class="comp-indicator">Subscription app</span></td>
+                        <td class="col-liz"><span class="comp-indicator comp-bold">$149 one-time</span><span class="comp-note">Lifetime access</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="comp-callout">
+            <p>Liz doesn't need to beat Sculpt Society at being a lifestyle brand. She needs to own the lane they can't credibly occupy: <strong>the clinical prenatal specialist that your doctor would actually recommend.</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SECTION 8: GROWTH ROADMAP -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">Section 08</div>
+            <h2 class="section-title">Growth Roadmap</h2>
+            <p class="section-subtitle">Three phases over 12 months. Each phase builds on the last. Liz's time commitment stays low throughout.</p>
+        </div>
+
+        <div class="roadmap-container">
+            <div class="roadmap-line">
+                <div class="roadmap-line-fill"></div>
+            </div>
+            <div class="roadmap-phases">
+
+                <!-- Phase 1 -->
+                <div class="roadmap-phase">
+                    <div class="roadmap-phase-header">
+                        <div class="roadmap-phase-num">1</div>
+                        <div class="roadmap-phase-title">Launch the Machine</div>
+                        <div class="roadmap-phase-range">Months 1-3</div>
+                    </div>
+                    <div class="roadmap-phase-body">
+                        <ul class="roadmap-actions">
+                            <li>Self-paced course live on Gumroad ($149)</li>
+                            <li>Lead magnet + email funnel activated</li>
+                            <li>Launch email to 500+ past clients</li>
+                            <li>Instagram content calendar begins</li>
+                            <li>Pinterest account created</li>
+                        </ul>
+                        <div class="roadmap-time-commit">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Liz's time: 1-2 hours/month
+                        </div>
+                        <div class="roadmap-revenue">
+                            <div class="roadmap-revenue-value">$3K-$7.5K</div>
+                            <div class="roadmap-revenue-label">Month 1 Revenue</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="roadmap-phase">
+                    <div class="roadmap-phase-header">
+                        <div class="roadmap-phase-num">2</div>
+                        <div class="roadmap-phase-title">Build Authority</div>
+                        <div class="roadmap-phase-range">Months 3-6</div>
+                    </div>
+                    <div class="roadmap-phase-body">
+                        <ul class="roadmap-actions">
+                            <li>SEO blog posts (2-3/month)</li>
+                            <li>YouTube Shorts from existing recordings</li>
+                            <li>Podcast guesting (Diana pitches, Liz appears)</li>
+                            <li>Babylist partnership</li>
+                            <li>BabyCenter contributor article</li>
+                            <li>Schema markup + AI optimization</li>
+                        </ul>
+                        <div class="roadmap-time-commit">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Liz's time: 2-3 hours/month
+                        </div>
+                        <div class="roadmap-revenue">
+                            <div class="roadmap-revenue-value">$1.2K-$3K</div>
+                            <div class="roadmap-revenue-label">Monthly Steady State</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="roadmap-phase">
+                    <div class="roadmap-phase-header">
+                        <div class="roadmap-phase-num">3</div>
+                        <div class="roadmap-phase-title">Own the Category</div>
+                        <div class="roadmap-phase-range">Months 6-12</div>
+                    </div>
+                    <div class="roadmap-phase-body">
+                        <ul class="roadmap-actions">
+                            <li>Postpartum course launched ($149)</li>
+                            <li>OB/midwife referral network</li>
+                            <li>Membership tier ($39/month)</li>
+                            <li>Brand partnerships</li>
+                            <li>AI search citations at scale</li>
+                            <li>Media pitches (national)</li>
+                        </ul>
+                        <div class="roadmap-time-commit">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Liz's time: 3-4 hours/month
+                        </div>
+                        <div class="roadmap-revenue">
+                            <div class="roadmap-revenue-value">$5K-$10K</div>
+                            <div class="roadmap-revenue-label">Monthly Across All Products</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Year 1 Total -->
+            <div class="roadmap-total">
+                <div class="roadmap-total-value">$42K &mdash; $55K</div>
+                <div class="roadmap-total-label">Year 1 Total Revenue Potential</div>
+                <div class="roadmap-total-sublabel">Liz's time: 1-4 hours/month.</div>
+            </div>
+
+        </div>
     </div>
 </section>
 
