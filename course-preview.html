@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Course | Liz Cuttica — Self-Paced Prenatal Series</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --warm-white: #FFFFFF;
+            --sand: #E8E0D4;
+            --taupe: #B8A99A;
+            --charcoal: #2C2C2C;
+            --soft-black: #1A1A1A;
+            --sage: #8B9A7E;
+            --sage-light: #A8B89E;
+            --sage-bg: rgba(139, 154, 126, 0.08);
+            --sage-border: rgba(139, 154, 126, 0.2);
+            --dusty-rose: #C4A7A0;
+            --dusty-rose-light: #D4BBB5;
+            --green-check: #6B8F5E;
+            --locked-opacity: 0.45;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--charcoal);
+            background-color: #F5F2ED;
+            line-height: 1.6;
+            font-weight: 300;
+            font-size: 15px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        a {
+            color: var(--sage);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--charcoal);
+        }
+
+        /* ============================================
+           PERSISTENT PROGRESS BAR (top of page)
+           ============================================ */
+        .global-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--sand);
+            z-index: 1000;
+        }
+
+        .global-progress-fill {
+            height: 100%;
+            width: 35%;
+            background: linear-gradient(90deg, var(--sage), var(--sage-light));
+            border-radius: 0 2px 2px 0;
+            transition: width 0.6s ease;
+        }
+
+        /* ============================================
+           TOP NAV BAR
+           ============================================ */
+        .top-bar {
+            position: fixed;
+            top: 3px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: rgba(250, 247, 242, 0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--sand);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            z-index: 999;
+        }
+
+        .top-bar-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--soft-black);
+            letter-spacing: 0.5px;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .top-bar-link {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--taupe);
+            letter-spacing: 0.3px;
+        }
+
+        .top-bar-link:hover {
+            color: var(--charcoal);
+        }
+
+        .avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--sage);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.08);
+        }
+
+        /* ============================================
+           MAIN LAYOUT
+           ============================================ */
+        .page-wrapper {
+            padding-top: 63px;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 32px 80px;
+        }
+
+        /* ============================================
+           SECTION DIVIDER
+           ============================================ */
+        .view-divider {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .view-divider-inner {
+            border-top: 2px solid var(--sand);
+            padding-top: 16px;
+            margin-bottom: 0;
+        }
+
+        .view-divider-label {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--taupe);
+            background: #F5F2ED;
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--sand);
+        }
+
+        /* ============================================
+           WELCOME BANNER
+           ============================================ */
+        .welcome-banner {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 36px 40px;
+            margin-bottom: 36px;
+            border: 1px solid var(--sand);
+            display: flex;
+            gap: 36px;
+            align-items: flex-start;
+        }
+
+        .welcome-left {
+            flex: 1;
+        }
+
+        .welcome-greeting {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--soft-black);
+            margin-bottom: 20px;
+        }
+
+        .progress-section {
+            margin-bottom: 20px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .progress-text {
+            font-size: 13px;
+            color: var(--taupe);
+            font-weight: 400;
+        }
+
+        .progress-percent {
+            font-size: 13px;
+            color: var(--sage);
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--sand);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 20px;
+            background: linear-gradient(90deg, var(--sage), var(--sage-light));
+            transition: width 0.8s ease;
+        }
+
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--sage);
+            color: white;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-top: 4px;
+        }
+
+        .resume-btn:hover {
+            background: var(--charcoal);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .resume-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .welcome-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            flex-shrink: 0;
+            max-width: 220px;
+        }
+
+        .liz-photo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sand);
+        }
+
+        .liz-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            font-style: italic;
+            color: var(--taupe);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .liz-quote-author {
+            font-size: 12px;
+            font-style: normal;
+            color: var(--dusty-rose);
+            font-weight: 500;
+            margin-top: 2px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* ============================================
+           DASHBOARD GRID
+           ============================================ */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .modules-section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--taupe);
+            margin-bottom: 20px;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ============================================
+           MODULE CARDS
+           ============================================ */
+        .module-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 14px;
+            padding: 28px 26px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--sand);
+            transition: background 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            border-color: var(--sage-border);
+        }
+
+        .module-card:hover::before {
+            background: var(--sage);
+        }
+
+        .module-card.completed::before {
+            background: var(--green-check);
+        }
+
+        .module-card.in-progress::before {
+            background: var(--sage);
+        }
+
+        .module-card.locked {
+            opacity: var(--locked-opacity);
+            cursor: default;
+        }
+
+        .module-card.locked:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--sand);
+        }
+
+        .module-card.locked:hover::before {
+            background: var(--sand);
+        }
+
+        .module-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .module-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--taupe);
+            letter-spacing: 1px;
+        }
+
+        .module-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--sage-bg);
+            border-radius: 10px;
+            color: var(--sage);
+        }
+
+        .module-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .module-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--soft-black);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .module-subtitle {
+            font-size: 13px;
+            color: var(--taupe);
+            font-weight: 400;
+            margin-bottom: 18px;
+            line-height: 1.4;
+        }
+
+        .module-meta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 12px;
+            color: var(--taupe);
+            margin-bottom: 14px;
+        }
+
+        .module-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .module-meta-item svg {
+            width: 13px;
+            height: 13px;
+            opacity: 0.6;
+        }
+
+        .module-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-completed {
+            color: var(--green-check);
+        }
+
+        .status-completed svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .status-in-progress {
+            color: var(--sage);
+            width: 100%;
+        }
+
+        .status-locked {
+            color: var(--taupe);
+        }
+
+        .status-locked svg {
+            width: 14px;
+            height: 14px;
+            opacity: 0.5;
+        }
+
+        .mini-progress {
+            flex: 1;
+        }
+
+        .mini-progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            font-size: 11px;
+        }
+
+        .mini-progress-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--sand);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .mini-progress-fill {
+            height: 100%;
+            background: var(--sage);
+            border-radius: 10px;
+        }
+
+        /* ============================================
+           SIDEBAR
+           ============================================ */
+        .sidebar {
+            position: sticky;
+            top: 83px;
+        }
+
+        .sidebar-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--taupe);
+            margin-bottom: 18px;
+        }
+
+        .resource-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            transition: background 0.2s ease;
+            cursor: pointer;
+            margin-bottom: 6px;
+        }
+
+        .resource-item:hover {
+            background: rgba(139, 154, 126, 0.06);
+        }
+
+        .resource-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+            flex-shrink: 0;
+        }
+
+        .resource-icon.pdf {
+            background: rgba(196, 167, 160, 0.15);
+            color: var(--dusty-rose);
+        }
+
+        .resource-icon.link {
+            background: var(--sage-bg);
+            color: var(--sage);
+        }
+
+        .resource-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .resource-text {
+            flex: 1;
+        }
+
+        .resource-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.3;
+        }
+
+        .resource-detail {
+            font-size: 11px;
+            color: var(--taupe);
+            margin-top: 1px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-top: 4px;
+        }
+
+        .badge-soon {
+            background: var(--sand);
+            color: var(--taupe);
+        }
+
+        .badge-savings {
+            background: rgba(139, 154, 126, 0.12);
+            color: var(--sage);
+        }
+
+        .upgrade-cta {
+            display: block;
+            text-align: center;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, var(--sage-bg), rgba(196, 167, 160, 0.08));
+            border: 1px solid var(--sage-border);
+            border-radius: 10px;
+            margin-top: 16px;
+            transition: all 0.25s ease;
+        }
+
+        .upgrade-cta:hover {
+            border-color: var(--sage);
+            background: rgba(139, 154, 126, 0.1);
+        }
+
+        .upgrade-cta-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .upgrade-cta-detail {
+            font-size: 11px;
+            color: var(--sage);
+            margin-top: 2px;
+        }
+
+        /* ============================================
+           VIEW 2: MODULE VIEW
+           ============================================ */
+        .module-view {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 32px 100px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--taupe);
+            font-weight: 400;
+            margin-bottom: 24px;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--charcoal);
+        }
+
+        .back-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .module-header {
+            margin-bottom: 32px;
+        }
+
+        .module-header-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 8px;
+        }
+
+        .module-header-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 500;
+            color: var(--soft-black);
+            margin-bottom: 12px;
+        }
+
+        .module-header-desc {
+            font-size: 15px;
+            color: var(--taupe);
+            max-width: 680px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .module-progress-inline {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .module-progress-bar {
+            width: 180px;
+            height: 6px;
+            background: var(--sand);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .module-progress-fill {
+            height: 100%;
+            background: var(--sage);
+            border-radius: 10px;
+        }
+
+        .module-progress-text {
+            font-size: 12px;
+            color: var(--taupe);
+            font-weight: 500;
+        }
+
+        /* Module content grid */
+        .module-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 32px;
+            align-items: start;
+        }
+
+        /* ============================================
+           VIDEO PLAYER
+           ============================================ */
+        .video-container {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: var(--soft-black);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .video-player::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .video-player::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30%;
+            height: 4px;
+            background: var(--sage);
+            z-index: 1;
+        }
+
+        .play-button {
+            width: 72px;
+            height: 72px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .video-player:hover .play-button {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.08);
+            border-color: rgba(255,255,255,0.35);
+        }
+
+        .play-button svg {
+            width: 28px;
+            height: 28px;
+            color: white;
+            margin-left: 3px;
+        }
+
+        .video-time-overlay {
+            position: absolute;
+            bottom: 14px;
+            right: 16px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+            z-index: 2;
+        }
+
+        .video-info {
+            padding: 24px 28px;
+        }
+
+        .video-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--soft-black);
+            margin-bottom: 8px;
+        }
+
+        .video-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--taupe);
+            margin-bottom: 16px;
+        }
+
+        .video-meta-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--sand);
+        }
+
+        .video-instructor {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .video-instructor img {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .video-instructor-name {
+            font-size: 13px;
+            color: var(--charcoal);
+            font-weight: 400;
+        }
+
+        /* ============================================
+           NOTES FROM LIZ
+           ============================================ */
+        .notes-section {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 14px;
+            padding: 28px;
+            margin-top: 24px;
+        }
+
+        .notes-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .notes-header-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(196, 167, 160, 0.12);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dusty-rose);
+        }
+
+        .notes-header-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .notes-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        .notes-body {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-style: italic;
+            color: var(--charcoal);
+            line-height: 1.65;
+            opacity: 0.85;
+        }
+
+        /* ============================================
+           LESSON LIST (sidebar in module view)
+           ============================================ */
+        .lesson-list-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 14px;
+            overflow: hidden;
+            position: sticky;
+            top: 83px;
+        }
+
+        .lesson-list-header {
+            padding: 20px 24px 16px;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .lesson-list-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        .lesson-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(232, 224, 212, 0.5);
+            transition: background 0.2s ease;
+            cursor: pointer;
+        }
+
+        .lesson-item:last-child {
+            border-bottom: none;
+        }
+
+        .lesson-item:hover {
+            background: rgba(139, 154, 126, 0.04);
+        }
+
+        .lesson-item.active {
+            background: rgba(139, 154, 126, 0.08);
+        }
+
+        .lesson-item.completed-lesson {
+            opacity: 0.6;
+        }
+
+        .lesson-item.locked-lesson {
+            opacity: 0.4;
+            cursor: default;
+        }
+
+        .lesson-item.locked-lesson:hover {
+            background: transparent;
+        }
+
+        .lesson-status-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .lesson-status-icon.check {
+            background: rgba(107, 143, 94, 0.12);
+            color: var(--green-check);
+        }
+
+        .lesson-status-icon.play {
+            background: var(--sage);
+            color: white;
+        }
+
+        .lesson-status-icon.lock {
+            background: rgba(184, 169, 154, 0.12);
+            color: var(--taupe);
+        }
+
+        .lesson-status-icon svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .lesson-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .lesson-type-icon {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--taupe);
+            margin-bottom: 3px;
+        }
+
+        .lesson-type-icon svg {
+            width: 11px;
+            height: 11px;
+            opacity: 0.6;
+        }
+
+        .lesson-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.35;
+            margin-bottom: 3px;
+        }
+
+        .lesson-duration {
+            font-size: 11px;
+            color: var(--taupe);
+        }
+
+        .lesson-continue-btn {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--sage);
+            letter-spacing: 0.3px;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .module-content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lesson-list-card {
+                position: static;
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 0 16px;
+            }
+
+            .main-content, .module-view {
+                padding: 24px 16px 60px;
+            }
+
+            .view-divider {
+                padding: 0 16px;
+            }
+
+            .welcome-banner {
+                flex-direction: column;
+                padding: 24px;
+            }
+
+            .welcome-right {
+                flex-direction: row;
+                max-width: 100%;
+                align-items: center;
+            }
+
+            .liz-photo {
+                width: 48px;
+                height: 48px;
+            }
+
+            .liz-quote {
+                text-align: left;
+                font-size: 14px;
+            }
+
+            .welcome-greeting {
+                font-size: 26px;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .module-header-title {
+                font-size: 28px;
+            }
+
+            .top-bar-link.hide-mobile {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-right {
+                flex-direction: column;
+            }
+
+            .liz-quote {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global Progress Bar -->
+    <div class="global-progress">
+        <div class="global-progress-fill"></div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-bar">
+        <div class="top-bar-logo">Liz Cuttica</div>
+        <div class="top-bar-right">
+            <a href="#" class="top-bar-link hide-mobile">My Course</a>
+            <a href="#" class="top-bar-link hide-mobile">My Account</a>
+            <div class="avatar">SJ</div>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+
+        <!-- =============================================
+             VIEW 1: COURSE DASHBOARD
+             ============================================= -->
+        <div class="main-content">
+
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-left">
+                    <h1 class="welcome-greeting">Welcome back, Sarah!</h1>
+                    <div class="progress-section">
+                        <div class="progress-label">
+                            <span class="progress-text">Course progress</span>
+                            <span class="progress-percent">35% complete</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    <button class="resume-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        Resume: Workout 2 — Posture + Mobility Flow
+                    </button>
+                </div>
+                <div class="welcome-right">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6637ac8720301709efa8314d/c57cec66-67cf-420b-95fb-1c1553e93d1b/DSC03102.jpg" alt="Liz Cuttica" class="liz-photo">
+                    <div>
+                        <p class="liz-quote">"So glad you're here. Remember — something is always better than nothing."</p>
+                        <p class="liz-quote liz-quote-author">— Liz</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-layout">
+
+                <!-- Modules -->
+                <div>
+                    <div class="modules-section-title">Your Modules</div>
+                    <div class="modules-grid">
+
+                        <!-- Module 1: COMPLETED -->
+                        <div class="module-card completed">
+                            <div class="module-card-top">
+                                <span class="module-number">MODULE 01</span>
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22c4-2.5 7-6.5 7-11a7 7 0 0 0-14 0c0 4.5 3 8.5 7 11z"/>
+                                        <path d="M12 11c1.5 0 3-1 3-3s-1.5-3-3-3-3 1-3 3 1.5 3 3 3z"/>
+                                        <path d="M12 11v4"/>
+                                        <path d="M9 16h6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Foundations</h3>
+                            <p class="module-subtitle">Breath, Alignment, Awareness</p>
+                            <div class="module-meta">
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                    6 lessons
+                                </span>
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    ~45 min
+                                </span>
+                            </div>
+                            <div class="module-status status-completed">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                Completed
+                            </div>
+                        </div>
+
+                        <!-- Module 2: IN PROGRESS -->
+                        <div class="module-card in-progress">
+                            <div class="module-card-top">
+                                <span class="module-number">MODULE 02</span>
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22V8"/>
+                                        <path d="M5 12l7-4 7 4"/>
+                                        <path d="M7 16c0 0 2 3 5 3s5-3 5-3"/>
+                                        <circle cx="12" cy="5" r="2"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="module-title">First Trimester</h3>
+                            <p class="module-subtitle">Building the Base</p>
+                            <div class="module-meta">
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                    5 lessons
+                                </span>
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    ~55 min
+                                </span>
+                            </div>
+                            <div class="module-status status-in-progress">
+                                <div class="mini-progress">
+                                    <div class="mini-progress-label">
+                                        <span>In Progress</span>
+                                        <span>2 of 5</span>
+                                    </div>
+                                    <div class="mini-progress-bar">
+                                        <div class="mini-progress-fill" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 3: LOCKED -->
+                        <div class="module-card locked">
+                            <div class="module-card-top">
+                                <span class="module-number">MODULE 03</span>
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 8a4 4 0 0 0-8 0v4"/>
+                                        <path d="M6 12h12a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2z"/>
+                                        <path d="M14 8V6a4 4 0 0 0-4-4"/>
+                                        <circle cx="9" cy="12" r="0"/>
+                                        <path d="M7 7l3 5M17 7l-3 5"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Second Trimester</h3>
+                            <p class="module-subtitle">Strength and Stability</p>
+                            <div class="module-meta">
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                    6 lessons
+                                </span>
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    ~65 min
+                                </span>
+                            </div>
+                            <div class="module-status status-locked">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                Complete Module 2 to unlock
+                            </div>
+                        </div>
+
+                        <!-- Module 4: LOCKED -->
+                        <div class="module-card locked">
+                            <div class="module-card-top">
+                                <span class="module-number">MODULE 04</span>
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Third Trimester</h3>
+                            <p class="module-subtitle">Power and Preparation</p>
+                            <div class="module-meta">
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                    5 lessons
+                                </span>
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    ~55 min
+                                </span>
+                            </div>
+                            <div class="module-status status-locked">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                Locked
+                            </div>
+                        </div>
+
+                        <!-- Module 5: LOCKED -->
+                        <div class="module-card locked">
+                            <div class="module-card-top">
+                                <span class="module-number">MODULE 05</span>
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Labor Prep</h3>
+                            <p class="module-subtitle">Breath, Positions, Readiness</p>
+                            <div class="module-meta">
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                    5 lessons
+                                </span>
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    ~50 min
+                                </span>
+                            </div>
+                            <div class="module-status status-locked">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                Locked
+                            </div>
+                        </div>
+
+                        <!-- Module 6: LOCKED -->
+                        <div class="module-card locked">
+                            <div class="module-card-top">
+                                <span class="module-number">MODULE 06</span>
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2v4"/>
+                                        <path d="M4.93 10.93l2.83 2.83"/>
+                                        <path d="M2 18h4"/>
+                                        <path d="M18 18h4"/>
+                                        <path d="M16.24 13.76l2.83-2.83"/>
+                                        <path d="M12 18a6 6 0 0 1-6-6"/>
+                                        <path d="M12 18a6 6 0 0 0 6-6"/>
+                                        <line x1="2" y1="22" x2="22" y2="22"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Early Postpartum Preview</h3>
+                            <p class="module-subtitle">Recovery and New Beginnings</p>
+                            <div class="module-meta">
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                    4 lessons
+                                </span>
+                                <span class="module-meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    ~30 min
+                                </span>
+                            </div>
+                            <div class="module-status status-locked">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                Locked
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <div class="sidebar-title">Your Resources</div>
+
+                        <div class="resource-item">
+                            <div class="resource-icon pdf">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
+                            <div class="resource-text">
+                                <div class="resource-name">Breath Basics Quick Reference</div>
+                                <div class="resource-detail">PDF Download</div>
+                            </div>
+                        </div>
+
+                        <div class="resource-item">
+                            <div class="resource-icon pdf">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
+                            <div class="resource-text">
+                                <div class="resource-name">5 Prenatal Exercises for Every Trimester</div>
+                                <div class="resource-detail">PDF Download</div>
+                            </div>
+                        </div>
+
+                        <div class="resource-item">
+                            <div class="resource-icon link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div class="resource-text">
+                                <div class="resource-name">Join the Private Community</div>
+                                <span class="badge badge-soon">Coming Soon</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="upgrade-cta">
+                            <div class="upgrade-cta-title">Upgrade to Live Series ($599)</div>
+                            <div class="upgrade-cta-detail">
+                                <span class="badge badge-savings" style="margin-top: 0;">$450 off with bundle</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- =============================================
+             VIEW DIVIDER
+             ============================================= -->
+        <div class="view-divider" style="margin-bottom: 8px;">
+            <div class="view-divider-inner">
+                <span class="view-divider-label">Preview: Inside a Module</span>
+            </div>
+        </div>
+
+        <!-- =============================================
+             VIEW 2: INSIDE MODULE 2
+             ============================================= -->
+        <div class="module-view">
+
+            <!-- Back Link -->
+            <a href="#" class="back-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Back to Course Dashboard
+            </a>
+
+            <!-- Module Header -->
+            <div class="module-header">
+                <div class="module-header-number">Module 02</div>
+                <h2 class="module-header-title">First Trimester — Building the Base</h2>
+                <p class="module-header-desc">Your body is adjusting but not yet visibly changed. This module focuses on core activation, posture, and building a strong foundation for the months ahead.</p>
+                <div class="module-progress-inline">
+                    <div class="module-progress-bar">
+                        <div class="module-progress-fill" style="width: 40%"></div>
+                    </div>
+                    <span class="module-progress-text">2 of 5 lessons complete</span>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="module-content-grid">
+
+                <!-- Left: Video + Notes -->
+                <div>
+                    <!-- Video Player -->
+                    <div class="video-container">
+                        <div class="video-player">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                            <div class="video-time-overlay">6:24 / 20:00</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Workout 2: Posture + Mobility Flow</h3>
+                            <div class="video-meta">
+                                <span>20 min</span>
+                                <span class="video-meta-dot"></span>
+                                <span>Guided workout</span>
+                            </div>
+                            <div class="video-instructor">
+                                <img src="https://images.squarespace-cdn.com/content/v1/6637ac8720301709efa8314d/c57cec66-67cf-420b-95fb-1c1553e93d1b/DSC03102.jpg" alt="Liz Cuttica">
+                                <span class="video-instructor-name">Liz Cuttica</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notes from Liz -->
+                    <div class="notes-section">
+                        <div class="notes-header">
+                            <div class="notes-header-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                            </div>
+                            <span class="notes-title">Notes from Liz</span>
+                        </div>
+                        <p class="notes-body">"This workout is all about reconnecting with your core through breath. Don't worry about how deep the movements are — focus on the breath-to-movement connection. If something doesn't feel right, modify or skip it. You know your body."</p>
+                    </div>
+                </div>
+
+                <!-- Right: Lesson List -->
+                <div class="lesson-list-card">
+                    <div class="lesson-list-header">
+                        <span class="lesson-list-title">Module 2 Lessons</span>
+                    </div>
+
+                    <!-- Lesson 1: COMPLETED -->
+                    <div class="lesson-item completed-lesson">
+                        <div class="lesson-status-icon check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div class="lesson-info">
+                            <div class="lesson-type-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                                Educational
+                            </div>
+                            <div class="lesson-name">What's Happening in Your Body: Trimester 1</div>
+                            <div class="lesson-duration">8 min</div>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 2: COMPLETED -->
+                    <div class="lesson-item completed-lesson">
+                        <div class="lesson-status-icon check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div class="lesson-info">
+                            <div class="lesson-type-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                                Workout
+                            </div>
+                            <div class="lesson-name">Workout 1: Core Activation + Breath</div>
+                            <div class="lesson-duration">20 min</div>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 3: UP NEXT -->
+                    <div class="lesson-item active">
+                        <div class="lesson-status-icon play">
+                            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="6 4 18 12 6 20 6 4"/></svg>
+                        </div>
+                        <div class="lesson-info">
+                            <div class="lesson-type-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                                Workout
+                            </div>
+                            <div class="lesson-name">Workout 2: Posture + Mobility Flow</div>
+                            <div class="lesson-duration">20 min</div>
+                            <span class="lesson-continue-btn">Continue &rarr;</span>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 4: LOCKED -->
+                    <div class="lesson-item locked-lesson">
+                        <div class="lesson-status-icon lock">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
+                        <div class="lesson-info">
+                            <div class="lesson-type-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                                Educational
+                            </div>
+                            <div class="lesson-name">When to Modify (and When Not To)</div>
+                            <div class="lesson-duration">7 min</div>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 5: LOCKED -->
+                    <div class="lesson-item locked-lesson">
+                        <div class="lesson-status-icon lock">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
+                        <div class="lesson-info">
+                            <div class="lesson-type-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                                Expert Talk
+                            </div>
+                            <div class="lesson-name">Expert Talk: Pelvic Floor Basics</div>
+                            <div class="lesson-duration">15 min</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
