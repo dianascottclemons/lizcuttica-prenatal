@@ -1399,6 +1399,190 @@
             .roadmap-phases { grid-template-columns: 1fr; }
             .roadmap-line { display: none; }
             .roadmap-total-value { font-size: 32px; }
+            .time-week-grid { grid-template-columns: 1fr !important; }
+            .time-comparison { flex-direction: column; gap: 20px; }
+            .time-comparison-card { min-width: auto; }
+            .time-bar-row { flex-direction: column; align-items: flex-start; }
+            .time-bar-label { min-width: auto; }
+        }
+
+        /* ── Time Commitment Section ── */
+        .time-week-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 48px;
+        }
+        .time-day {
+            background: white;
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            position: relative;
+        }
+        .time-day-name {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--taupe);
+            margin-bottom: 12px;
+        }
+        .time-block {
+            border-radius: 8px;
+            padding: 8px 6px;
+            margin-bottom: 6px;
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        .time-block.existing {
+            background: var(--sand-light);
+            color: var(--charcoal);
+            border: 1px solid var(--sand);
+        }
+        .time-block.new {
+            background: rgba(139, 154, 126, 0.15);
+            color: var(--sage);
+            border: 1px solid rgba(139, 154, 126, 0.3);
+        }
+        .time-block.personal {
+            background: rgba(196, 167, 160, 0.1);
+            color: var(--dusty-rose);
+            border: 1px solid rgba(196, 167, 160, 0.25);
+        }
+        .time-legend {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+        .time-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--charcoal);
+        }
+        .time-legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 4px;
+        }
+        .time-comparison {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+        .time-comparison-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 48px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            flex: 1;
+            max-width: 360px;
+        }
+        .time-comparison-card.highlight {
+            border: 2px solid var(--sage);
+        }
+        .time-comparison-hours {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .time-comparison-unit {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--taupe);
+            margin-bottom: 16px;
+        }
+        .time-comparison-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+        .time-comparison-detail {
+            font-size: 13px;
+            color: var(--taupe);
+            line-height: 1.5;
+        }
+        .time-bar-container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            margin-bottom: 32px;
+        }
+        .time-bar-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: var(--charcoal);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .time-bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 16px;
+        }
+        .time-bar-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--charcoal);
+            min-width: 200px;
+            text-align: right;
+        }
+        .time-bar-track {
+            flex: 1;
+            height: 32px;
+            background: var(--cream);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .time-bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            transition: width 0.6s ease;
+        }
+        .time-bar-fill.diana { background: var(--sage); }
+        .time-bar-fill.liz { background: var(--dusty-rose); }
+        .time-callout {
+            text-align: center;
+            padding: 32px 40px;
+            background: var(--charcoal);
+            border-radius: 16px;
+            color: white;
+        }
+        .time-callout-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        .time-callout-text span {
+            color: var(--sage);
+        }
+        .time-callout-sub {
+            font-size: 14px;
+            color: var(--taupe);
         }
     </style>
 </head>
@@ -2476,6 +2660,186 @@
             </div>
 
         </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SECTION 09: LIZ'S TIME COMMITMENT -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">Section 09</div>
+            <h2 class="section-title">Liz's Time Commitment</h2>
+            <p class="section-subtitle">The entire point: Liz's schedule barely changes. Diana and Claude handle everything else.</p>
+        </div>
+
+        <!-- Weekly View -->
+        <div class="time-week-grid">
+            <div class="time-day">
+                <div class="time-day-name">Mon</div>
+                <div class="time-block existing">Client 1:1</div>
+                <div class="time-block existing">Client 1:1</div>
+                <div class="time-block personal">Milly time</div>
+            </div>
+            <div class="time-day">
+                <div class="time-day-name">Tue</div>
+                <div class="time-block existing">Client 1:1</div>
+                <div class="time-block existing">Client 1:1</div>
+                <div class="time-block existing">Client 1:1</div>
+            </div>
+            <div class="time-day">
+                <div class="time-day-name">Wed</div>
+                <div class="time-block existing">Client 1:1</div>
+                <div class="time-block existing">Client 1:1</div>
+                <div class="time-block personal">Milly time</div>
+            </div>
+            <div class="time-day">
+                <div class="time-day-name">Thu</div>
+                <div class="time-block existing">Client 1:1</div>
+                <div class="time-block existing">Client 1:1</div>
+                <div class="time-block existing">Client 1:1</div>
+            </div>
+            <div class="time-day">
+                <div class="time-day-name">Fri</div>
+                <div class="time-block existing">Client 1:1</div>
+                <div class="time-block new" style="border-style: dashed;">Approve posts<br><span style="font-size: 9px; opacity: 0.8;">~5 min</span></div>
+                <div class="time-block personal">Milly time</div>
+            </div>
+            <div class="time-day" style="background: var(--cream);">
+                <div class="time-day-name">Sat</div>
+                <div class="time-block personal">Family day</div>
+            </div>
+            <div class="time-day" style="background: var(--cream);">
+                <div class="time-day-name">Sun</div>
+                <div class="time-block personal">Family day</div>
+            </div>
+        </div>
+
+        <div class="time-legend">
+            <div class="time-legend-item">
+                <div class="time-legend-dot" style="background: var(--sand); border: 1px solid var(--sand);"></div>
+                Liz's existing schedule (unchanged)
+            </div>
+            <div class="time-legend-item">
+                <div class="time-legend-dot" style="background: rgba(139,154,126,0.2); border: 1px dashed var(--sage);"></div>
+                New (the only addition)
+            </div>
+            <div class="time-legend-item">
+                <div class="time-legend-dot" style="background: rgba(196,167,160,0.15); border: 1px solid rgba(196,167,160,0.3);"></div>
+                Personal / family
+            </div>
+        </div>
+
+        <!-- The Big Numbers -->
+        <div class="time-comparison">
+            <div class="time-comparison-card">
+                <div class="time-comparison-hours" style="color: var(--sand);">40+</div>
+                <div class="time-comparison-unit">hours / month</div>
+                <div class="time-comparison-label">Liz's Current Workload</div>
+                <div class="time-comparison-detail">1:1 clients, live series prep, admin, being a mom. This doesn't change.</div>
+            </div>
+            <div class="time-comparison-card highlight">
+                <div class="time-comparison-hours" style="color: var(--sage);">1-2</div>
+                <div class="time-comparison-unit">hours / month</div>
+                <div class="time-comparison-label">New Time Required</div>
+                <div class="time-comparison-detail">Quick text approvals on Instagram posts. That's it for Phase 1.</div>
+            </div>
+        </div>
+
+        <!-- Who Does What -->
+        <div class="time-bar-container">
+            <div class="time-bar-title">Who Does What</div>
+
+            <div class="time-bar-row">
+                <div class="time-bar-label">Marketing & content</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill diana" style="width: 100%;">Diana + Claude</div>
+                </div>
+            </div>
+            <div class="time-bar-row">
+                <div class="time-bar-label">Sales page & website</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill diana" style="width: 100%;">Diana + Claude</div>
+                </div>
+            </div>
+            <div class="time-bar-row">
+                <div class="time-bar-label">Email sequences</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill diana" style="width: 100%;">Diana + Claude</div>
+                </div>
+            </div>
+            <div class="time-bar-row">
+                <div class="time-bar-label">SEO blog posts</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill diana" style="width: 100%;">Diana + Claude</div>
+                </div>
+            </div>
+            <div class="time-bar-row">
+                <div class="time-bar-label">Pinterest & YouTube</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill diana" style="width: 100%;">Diana + Claude</div>
+                </div>
+            </div>
+            <div class="time-bar-row">
+                <div class="time-bar-label">Tech setup (Gumroad, email)</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill diana" style="width: 100%;">Diana + Claude</div>
+                </div>
+            </div>
+            <div class="time-bar-row">
+                <div class="time-bar-label">Customer service</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill diana" style="width: 100%;">Diana + Claude</div>
+                </div>
+            </div>
+            <div class="time-bar-row">
+                <div class="time-bar-label">Instagram post approvals</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill liz" style="width: 15%;">Liz</div>
+                </div>
+            </div>
+            <div class="time-bar-row">
+                <div class="time-bar-label">Podcast appearances (Phase 2)</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill liz" style="width: 8%;">Liz</div>
+                </div>
+            </div>
+            <div class="time-bar-row">
+                <div class="time-bar-label">Monthly live Q&A (Phase 3)</div>
+                <div class="time-bar-track">
+                    <div class="time-bar-fill liz" style="width: 4%;">Liz</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase-by-Phase Time -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px;">
+            <div style="background: white; border-radius: 16px; padding: 32px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-top: 4px solid var(--sage);">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 12px;">Phase 1: Launch</div>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--sage); line-height: 1;">1</div>
+                <div style="font-size: 13px; font-weight: 600; color: var(--taupe); margin-bottom: 16px;">hour total to launch</div>
+                <div style="font-size: 12px; color: #888; line-height: 1.6;">Review what Diana built.<br>Say "go."<br>That's it.</div>
+            </div>
+            <div style="background: white; border-radius: 16px; padding: 32px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-top: 4px solid var(--dusty-rose);">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--dusty-rose); margin-bottom: 12px;">Phase 2: Authority</div>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--dusty-rose); line-height: 1;">2</div>
+                <div style="font-size: 13px; font-weight: 600; color: var(--taupe); margin-bottom: 16px;">hours per month</div>
+                <div style="font-size: 12px; color: #888; line-height: 1.6;">Approve Instagram posts (5 min/week).<br>One 30-min podcast appearance.</div>
+            </div>
+            <div style="background: white; border-radius: 16px; padding: 32px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-top: 4px solid var(--charcoal);">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--charcoal); margin-bottom: 12px;">Phase 3: Category</div>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--charcoal); line-height: 1;">4</div>
+                <div style="font-size: 13px; font-weight: 600; color: var(--taupe); margin-bottom: 16px;">hours per month</div>
+                <div style="font-size: 12px; color: #888; line-height: 1.6;">Everything in Phase 2, plus<br>one 60-min live Q&A with members.</div>
+            </div>
+        </div>
+
+        <div class="time-callout">
+            <div class="time-callout-text">Liz keeps doing exactly what she's doing now.<br>Diana builds the business around her. <span>Revenue shows up.</span></div>
+            <div class="time-callout-sub">No new platform to learn. No content to create. No tech to figure out. No marketing to manage.</div>
+        </div>
+
     </div>
 </section>
 
